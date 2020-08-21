@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/index",
+    "pages/login/code",
+    "pages/news/detail",
+    "pages/qa-question/index",
+    "pages/case-detail/index",
+    "pages/topic/index",
+    "pages/topic/sub-topic"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "小法管家",
+    "navigationBarBackgroundColor": "#ECF1F7",
+    "backgroundColor": "#FFFFFF"
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap3.json"
+}

@@ -1,0 +1,473 @@
+.qa-question-page {
+	overflow-y: hidden;
+	// display: flex;
+	// flex-direction: column;
+	height: 100vh;
+	.scroll-wrap {
+		// padding-top: 22upx;
+		padding-left: 10upx;
+		padding-right: 10upx;
+	  // padding-bottom: 228upx;
+		box-sizing: border-box;
+		height: 100%;
+		z-index: 1;
+		background: transparent;
+		// flex: 1;
+		// overflow-y: auto;
+		.history-text{
+			text-align: center;
+			font-size:22upx;
+			font-family:PingFang SC;
+			color:#3F8EE8;
+			padding-top: 24upx;
+			padding-bottom: 40upx;
+		}
+		.default-greeting {
+			margin-top: 22upx;
+			.header-icon {
+				width: 106upx;
+				height: 90upx;
+				margin-right: 13upx;
+				vertical-align: bottom;
+			}
+			.text {
+				background:linear-gradient(270deg,rgba(0,168,240,1),rgba(0,120,240,1));
+				border-radius:0px 30px 30px 30px;
+				padding: 0 36upx 0 29upx;
+				height: 60upx;
+				line-height: 60upx;
+				box-sizing: border-box;
+				font-size: 24upx;
+				color: #FFFFFF;
+				display: inline-block;
+			}
+		}
+		.answer-box {
+			width: 660upx;
+			margin: 0 auto;
+			&::after {
+				border-radius:12px;
+				box-sizing: content-box;
+			}
+			&.recommend {
+				margin-top: 40upx;
+				position: relative;
+				// min-height: 376upx;
+				padding: 0;
+				.label {
+					background:linear-gradient(-90deg,rgba(255,137,73,1),rgba(250,90,65,1));
+					color: #FFFFFF;
+					display: block;
+					height: 34upx;
+					line-height: 34upx;
+					width: 94upx;
+					border-radius:12upx 0 12upx 0;
+					font-size:20upx;
+					font-family:PingFang SC;
+					left: 0;
+					text-align: center;
+					text-shadow:0px 0px 4px rgba(255,72,42,1);
+				}
+				.option-wrap {
+					margin-top: 23upx;
+					padding-left: 12upx;
+					padding-right: 12upx;
+						box-sizing: border-box;
+					.option-item {
+						padding-left: 37upx;
+						padding-right: 31upx;
+						padding-bottom: 26upx;
+						box-sizing: border-box;
+						font-size: 26upx;
+						font-weight: Regular;
+						position: relative;
+						line-height:42upx;
+						color: #007EFF;
+						&:not(:first-child) {
+								padding-top: 25upx;
+						}
+						&.active {
+							display: flex;
+							align-items: center;
+							color: #034A99;
+							align-content: center;
+							&::before {
+								content: "";
+								width:8upx;
+								height:8upx;
+								position: relative;
+								display: block;
+								border-radius: 50%;
+								background:rgba(61,197,109,1);
+								margin-left: -28upx;
+								margin-right: 20upx;
+							}
+						}
+					}
+				}
+				.change-pager {
+					text-align: center;
+					color: #65799B;
+					font-size: 24upx;
+					padding: 27upx 0;
+					image {
+						width: 23.4upx;
+						height: 22upx;
+						margin-right: 8upx;
+						vertical-align: middle;
+						border-bottom:2rpx solid rgb(255, 255, 255);
+						// transition: All 0.4s ease; 
+						// transform: rotate(180deg);
+					}
+				}
+			}
+		}
+		.question-box {
+			display: flex;
+			justify-content: flex-end;
+			animation: fadeIn .5s;
+			padding-right: 6upx;
+			box-sizing: border-box;
+			margin-top: 40upx;
+			margin-bottom: 50upx;
+			.header-image {
+				&.user-header {
+					margin-left: 16upx;
+				}
+				image {
+					width: 62upx;
+					height: 60upx;
+				}
+			}
+			.box-content{
+				padding: 24upx 32upx;
+				background-color: #009BFF;
+				box-shadow:0px 6px 4px 0px rgba(237,241,246,0.3);
+				border-radius:6px;
+				max-width: 525upx;
+				position: relative;
+				.read-text {
+					color: #A0ACBF;
+					font-size: 26upx;
+					font-family: PingFangSC-Regular;
+					position: absolute;
+					left: -60upx;
+					bottom: 0;
+				}
+				.text {
+					font-weight: Regular;
+					font-size: 26upx;
+					font-family:PingFang SC;
+					color: #FFFFFF;
+					line-height:42upx;
+				}
+			}
+		}
+		.answer-box {
+			.tip-content {
+				margin-top: 40upx;
+				margin-bottom: 21upx;
+				text-align: center;
+				.tip-text {
+					background:rgba(220,226,234,1);
+					border-radius:23px;
+					text-align: center;
+					color: #A0ACBF;
+					display: inline-block;
+					font-size: 24upx;
+					font-family: PingFangSC-Regular;
+					padding: 10upx 36upx;
+				}
+				.quit-queue {
+					background:rgba(217,232,249,1);
+					border-radius:23px;
+					padding: 10upx 32upx;
+					color: #009BFF;
+					font-size: 24upx;
+					display: inline-block;
+					margin-left: 12upx;
+				}
+			}
+			.chat-content {
+				display: flex;
+				margin-left: -24upx;
+				.seat-icon {
+					width: 54upx;
+					height: 54upx;
+					flex: 0 0 54rpx;
+				}
+				.chat-message-box {
+					box-sizing: border-box;
+					margin-left: 24upx;
+					padding: 24upx 32upx;
+					width: auto;
+					display: inline-block;
+					ont-size: 30upx;
+					box-shadow: 0 6px 4px 0 rgba(237, 241, 246, 0.3);
+					.button-wrap {
+						width: 512upx;
+						height: 60upx;
+						line-height: 60upx;
+						color: #FFFFFF;
+						margin-top: 32upx;
+						font-size: 26upx;
+						text-align: center;
+						margin-bottom: 4upx;
+						position: relative;
+						background:linear-gradient(270deg,rgba(74,162,255,1) 0%,rgba(33,99,224,1) 100%);
+						border-radius:0 30upx 30upx 30upx;
+						image {
+							width: 88upx;
+							height: 88upx;
+							position: absolute;
+							left: 12upx;
+							bottom: 0;
+						}
+					}
+					.img-label {
+						width: 240upx;
+					}
+					.file-label {
+						height: 170upx;
+					}
+					 &::after {
+					   border-radius: 12px;
+					   border-color: #BECBDF;
+					 }
+				}
+			}
+			.order-content {
+				.file-wrap {
+					.order-image{
+						width: 690upx;
+						height: 660upx;
+					}
+			 }
+			}
+			.answer-content {
+				width: 660upx;
+				max-width: none;
+				margin-bottom: 24upx;
+			}
+			.card-content {
+				background:linear-gradient(4deg,rgba(0,155,255,0.01) 0%,rgba(0,155,255,0.1) 100%);
+				border-radius:12rpx;
+				padding: 14upx 20upx;
+				box-sizing: border-box;
+				.card-header {
+					position: relative;
+					width:222upx;
+					height: 70upx;
+				.card-info {
+					font-size: 32rpx;
+					color: #113260;
+					position: absolute;
+					top: -30upx;
+					left: 0;
+					z-index: 2;
+					image{
+						width: 60rpx;
+						height: 70rpx;
+						vertical-align: text-bottom;
+						margin-right: 16upx;
+					}
+				}	
+				.bottom-border {
+					width:222upx;
+					height:17upx;
+					z-index: 1;
+					background:linear-gradient(90deg,rgba(10,178,255,0.6) 0%,rgba(4,123,255,0.6) 100%);
+					position: absolute;
+					bottom: 27upx;
+					left: 0;
+				}
+				}
+				.card-text {
+					padding: 20upx 4upx 27upx 4upx;
+					font-size: 30upx;
+					color: #061F42;
+					line-height: 44upx;
+					text-align: justify;
+					display: block;
+				}
+				.card-btn-all {
+					width:160upx;
+					height:40upx;
+					line-height: 40upx;
+					background:rgba(4,123,255,0.08);
+					border-radius:20upx;
+					font-size:24upx;
+					font-family:PingFangSC-Regular,PingFang SC;
+					font-weight:Regular;
+					color: #047BFF;
+					text-align: center;
+					margin: 0 auto 10upx auto;
+				}
+				&::after {
+					border-color: #D3E2F3;
+					border-radius:12px;
+				}
+			}
+			.options-content {
+				width:660upx;
+				margin-bottom: 40upx;
+				padding: 16upx 16upx 4upx 16upx;
+				box-sizing: border-box;
+				.title {
+					padding-left: 8upx;
+					padding-bottom: 24upx;
+					box-sizing: border-box;
+					color: #113260;
+					font-size: 30upx;
+					font-weight: Medium;
+					text-align: left;
+				}
+				.option-desc {
+					color: #586F8F;
+					font-size: 30upx;
+					padding-bottom: 20upx;
+					image {
+					width: 44upx;
+					height: 44upx;
+					margin-right: 12upx;
+					vertical-align: middle;
+					}
+					
+				}
+				.option-item {
+					padding: 17upx 8upx 20upx 32upx;
+					box-sizing: border-box;
+					position: relative;
+					 &:first-child {
+						 &:after {
+							 border-width: 0; 
+						 }
+					 }
+					.option-text {
+						color: #047BFF;
+						font-size: 30upx;
+						font-weight: Medium;
+					}
+					&.active {
+						display: flex;
+						align-items: center;
+						align-content: center;
+						.option-text {
+								color: #034A99;
+						}
+						&::before {
+							content: "";
+							width:8upx;
+							height:8upx;
+							position: relative;
+							display: block;
+							border-radius: 50%;
+							background:rgba(61,197,109,1);
+							margin-left: -28upx;
+							margin-right: 20upx;
+						}
+					}
+				}
+				&::after {
+					border-color: #BECBDF;
+					border-radius:12px;
+				}
+			}
+		}
+	}
+	.bottom-wrap {
+		// flex: 0;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		z-index: 2;
+		.relate-question {
+			padding: 27upx 20upx 25upx 20upx;
+			box-sizing: border-box;
+			    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .2) 10%, rgba(255, 255, 255, .5) 30%, rgba(255, 255, 255, 1) 100%);
+			display: flex;
+			justify-items: center;
+			justify-content: center;
+			align-items: center;
+			.label {
+				color: #A0ACBF;
+				font-size: 26upx;
+				flex: 0 0 110upx;
+				font-family:PingFangSC-Regular,PingFang SC;
+				margin-right: 20upx;
+			}
+			.relate-list {
+				flex: 1;
+				overflow-x: auto;
+				white-space: nowrap;
+				.relate-item {
+					padding: 15upx 20upx;
+					box-sizing: border-box;
+					font-size: 26upx;
+					color: #408CE2;
+					display: inline-block;
+					border-radius:30px;
+					&::after {
+						border-radius:40px;
+						border-color:#408CE2 ;
+					}
+					&:not(:first-child) {
+						margin-left: 32upx;
+					}
+				}
+			}
+		}
+		.input-wrap {
+			background-color: #FFFFFF;
+			width: 100%;
+			height: 118upx;
+		.input-box {
+			padding: 8upx 20upx 8upx 34upx;
+			width: 710upx;
+			height: 90upx;
+			background-color: #EDF1F6;
+			border-radius:45px;
+			margin: 0 auto 20upx auto;
+			display: flex;
+			align-items: center;
+		  align-content: center;
+			.left-icon {
+				image {
+					width:28upx;
+					height:40upx;
+					vertical-align: middle;
+				}
+				margin-right: 40upx;
+			}
+			.input {
+				flex: 1;
+			}
+			.right-icon {
+				image {
+					width:46upx;
+					height:46upx;
+					vertical-align: middle;
+					&.send-icon {
+						margin-right: 20upx;
+					}
+				}
+			}
+		}	
+		}
+	}
+	  @keyframes fadeIn {
+	    from {
+	      opacity: 0;
+	    }
+	
+	    to {
+	      opacity: 1;
+	    }
+	  }
+	
+	  .fadeIn {
+	    -webkit-animation-name: fadeIn;
+	    animation-name: fadeIn;
+	  }
+}

@@ -1,0 +1,186 @@
+.index-page {
+	.header-wrap {
+		height: 88upx;
+		width: 100%;
+		display: flex;
+		padding: 14upx 24upx;
+		box-sizing: border-box;
+		.location-box {
+			flex: 0 0 calc(750upx - 596upx);
+			line-height: 30px;
+			color: #113260;
+			text-align: left;
+			font-size: 30upx;
+			display: flex;
+			align-content: center;
+			align-items: center;
+			.arrow-bottom {
+				width: 32upx;
+				height: 32upx;
+				margin-left: 8upx;
+			}
+		}
+		.input-box {
+			display: flex;
+			width: 480upx;
+			height: 60upx;
+			border-radius:10upx;
+			background:rgba(237,241,246,1);
+			padding: 10upx 24upx;
+			box-sizing:inherit;
+			.search-icon {
+				width: 32upx;
+				height: 31upx;
+				padding-top: 2px;
+			}
+			.input-text {
+				color:#9FB0CD;
+				font-size: 28upx;
+				padding-left: 20upx;
+				font-family:PingFangSC-Regular,PingFang SC;
+			}
+		}
+		.user-info-box {
+			flex: 0 0 116upx;
+			text-align: right;
+			color: #007EFF;
+			font-size: 30upx;
+			line-height: 60upx;
+			image {
+				width:44upx;
+				height: 44upx;
+				vertical-align: middle;
+			}
+		}
+	}
+	.column-list {
+		padding: 30upx 42upx 48upx 42upx;
+		box-sizing: border-box;
+		display: flex;
+		justify-content: space-between;
+		.column-item{
+			.column-icon {
+				width: 100upx;
+				height: 100upx;
+			}
+			.column-name {
+				color: #3C3F50;
+				font-size: 26upx;
+				font-family:PingFangSC-Regular,PingFang SC;
+				margin-top: 0;
+				padding-top: 0;
+			}
+		}
+	}
+	.banner-box {
+		// background-color: #EFF4F7;
+		padding: 24upx;
+		box-sizing: border-box;
+		.swiper {
+			height: 207upx;
+		}
+		image {
+			height: 207upx;
+			width: 702upx;
+		}
+	}
+	.tab-list {
+		padding: 0 24upx;
+		.u-tab-item {
+			&:first-child {
+				padding-left: 0 !important;
+			}
+		}
+	}
+	.tab-data-list {
+		overflow: hidden;
+		.tab-item {
+			padding: 43upx 40upx 43upx 24upx;
+			box-sizing: border-box;
+			display: flex;
+			overflow: hidden;
+			&.no-flex {
+				display: block;
+			}
+			.hot {
+				font-size: 22upx;
+				color: #FFFFFF;
+				background-color: #FF4049;
+				border-radius:4px;
+				width:52upx;
+				height:30upx;
+				text-align: center;
+				display: inline-block;
+				margin-right: 16upx;
+			}
+			.icon {
+				display: flex;
+				justify-content: center;
+				align-content: center;
+				align-items: center;
+				justify-items: center;
+				image {
+					width: 142upx;
+					height: 102upx;
+					display: block;
+				}
+			}
+			.text{
+				padding-left: 24upx;
+				overflow: hidden;
+				.subject-name {
+					font-size: 32upx;
+					color: #113260;
+					vertical-align: text-top;
+				}
+				.subject-desc {
+					font-size: 28upx;
+					color: #65799B;
+					padding-right: 20upx;
+					box-sizing: border-box;
+					margin-top: 16upx;
+					margin-bottom: 8upx;
+				}
+				.count {
+					font-size: 24upx;
+					color: #9FB0CD;
+				}
+			}
+			.title {
+				font-size: 32upx;
+				color: #113260;
+				font-family:PingFangSC-Regular,PingFang SC;
+				text-align: justify;
+				margin-bottom: 16upx;
+			}
+			.desc {
+				display: flex;
+				font-size: 28upx;
+				.source {
+					flex: 1;
+					display: flex;
+				.label {
+					color: #F65200;
+					flex: 0 0 130upx;
+					margin-right: 24upx;
+				}
+				.source-text {
+					flex: 1;
+					color: #65799B;
+				}	
+				}
+				.time {
+					flex: 0 0 172upx;
+					text-align: right;
+					color: #9FB0CD;
+				}
+			}
+		}
+		.u-border-bottom{
+			&::after {
+				width: 1340upx;
+				left: 40upx;
+			}
+		}
+	}
+}

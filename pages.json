@@ -1,0 +1,46 @@
+{
+	"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [{
+		"path": "pages/index/index",
+		"style": {
+			"navigationBarTitleText": "小法管家"
+		}
+	}, {
+		"path": "pages/login/index",
+		"style": {
+			"navigationBarTitleText": "登录"
+		}
+	}, {
+		"path": "pages/login/code",
+		"style": {
+			"navigationBarTitleText": "登录获取验证码"
+		}
+	}, {
+		"path": "pages/news/detail",
+		"style": {
+			"navigationBarTitleText": "热点资讯"
+		}
+	}, {
+		"path": "pages/qa-question/index",
+		"style": {
+			"navigationBarTitleText": "智能法律问答"
+		}
+	}, {
+		"path": "pages/case-detail/index",
+		"style": {}
+	}, {
+		"path": "pages/topic/index",
+		"style": {}
+	}, {
+		"path": "pages/topic/sub-topic",
+		"style": {}
+	}],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "小法管家",
+		"navigationBarBackgroundColor": "#ECF1F7",
+		"backgroundColor": "#FFFFFF"
+	}
+}
