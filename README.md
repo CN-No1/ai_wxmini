@@ -1,3 +1,3 @@
-# iLawPush_WXMini
+# AI_WXMINI
 
-小法管家微信小程序
+Ai小程序
