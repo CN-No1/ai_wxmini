@@ -1,0 +1,61 @@
+.index-page .banner {
+  width: 750rpx;
+  height: 300rpx;
+}
+.index-page .apps-list {
+  min-height: 982rpx;
+  height: 100%;
+  padding-bottom: 10px;
+  background: #f6f7fa;
+}
+.index-page .apps-list .title {
+  padding: 46rpx 0 0 40rpx;
+  font-size: 36rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 700;
+  color: #1a1e30;
+  line-height: 50rpx;
+}
+.index-page .apps-list .apps-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding-top: 24rpx;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding-left: 30rpx;
+}
+.index-page .apps-list .apps-wrapper .app-item {
+  width: 330rpx;
+  height: 180rpx;
+  background: #ffffff;
+  box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+  border-radius: 8rpx;
+  padding: 45rpx 52rpx 50rpx 24rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 24rpx;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.index-page .apps-list .apps-wrapper .app-item:nth-child(2n-1) {
+  margin-right: 30rpx;
+}
+.index-page .apps-list .apps-wrapper .app-item .app-icon {
+  width: 90rpx;
+  height: 90rpx;
+  margin-right: 24rpx;
+}
+.index-page .apps-list .apps-wrapper .app-item .app-name {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #1a1e30;
+  line-height: 40rpx;
+}
+
