@@ -1,0 +1,1 @@
+<view class="news"><image class="banner" src="../../static/banner/banner3.png"></image><view class="news-list"><block wx:for="{{10}}" wx:for-item="i" wx:for-index="__i0__"><view class="news-item"><view class="img"></view><view class="title u-line-3">【喜报】擎盾数据机器人荣膺2020年最受用户喜爱的“抗疫机器人”TOP10！</view></view></block></view></view>

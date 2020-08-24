@@ -1,0 +1,41 @@
+.news .banner {
+  width: 750rpx;
+  height: 300rpx;
+}
+.news .news-list {
+  min-height: 982rpx;
+  background: #f6f7fa;
+  height: 100%;
+  padding-left: 30rpx;
+  padding-top: 28rpx;
+}
+.news .news-list .news-item {
+  width: 690rpx;
+  height: 244rpx;
+  background: #ffffff;
+  box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+  border-radius: 8rpx;
+  padding: 32rpx 38rpx 32rpx 24rpx;
+  margin-bottom: 24rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.news .news-list .news-item .img {
+  width: 240rpx;
+  height: 180rpx;
+  background: #e0e0e0;
+  margin-right: 24rpx;
+}
+.news .news-list .news-item .title {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 700;
+  color: #1a1e30;
+  line-height: 42rpx;
+  padding-top: 15rpx;
+}
+

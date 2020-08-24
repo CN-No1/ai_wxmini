@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/apps/index",
-    "pages/abilities/index"
+    "pages/abilities/index",
+    "pages/news/index"
   ],
   "subPackages": [],
   "window": {
@@ -33,7 +34,7 @@
         "text": "能力"
       },
       {
-        "pagePath": "pages/apps/index",
+        "pagePath": "pages/news/index",
         "iconPath": "static/icon/生态.png",
         "selectedIconPath": "static/icon/news_release.png",
         "text": "生态"

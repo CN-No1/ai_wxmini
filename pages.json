@@ -12,6 +12,9 @@
 		"style": {
 			"navigationBarTitleText": "擎盾AI体验中心"
 		}
+	}, {
+		"path": "pages/news/index",
+		"style": {}
 	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -46,7 +49,7 @@
 			"selectedIconPath": "static/icon/nenglifenxi.png",
 			"text": "能力"
 		}, {
-			"pagePath": "pages/apps/index",
+			"pagePath": "pages/news/index",
 			"iconPath": "static/icon/生态.png",
 			"selectedIconPath": "static/icon/news_release.png",
 			"text": "生态"
