@@ -3239,4 +3239,8 @@ u-switch {
 /* end-微信小程序编译后页面有组件名的元素，特别处理--end */
 
 
+@font-face {
+  font-family: 'PINGFANG BOLD';
+  src: url("../../static/fonts/PINGFANG BOLD.dd25b35d.TTF");
+}
 

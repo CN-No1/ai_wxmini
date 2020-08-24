@@ -1,21 +1,44 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/login/index",
-    "pages/login/code",
-    "pages/news/detail",
-    "pages/qa-question/index",
-    "pages/case-detail/index",
-    "pages/topic/index",
-    "pages/topic/sub-topic"
+    "pages/apps/index",
+    "pages/abilities/index"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "小法管家",
+    "navigationBarTitleText": "擎盾AI体验中心",
     "navigationBarBackgroundColor": "#ECF1F7",
     "backgroundColor": "#FFFFFF"
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap3.json"
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#5495FB",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "height": "30px",
+    "fontSize": "10px",
+    "iconWidth": "24px",
+    "spacing": "3px",
+    "list": [
+      {
+        "pagePath": "pages/apps/index",
+        "iconPath": "static/icon/yingyong(1).png",
+        "selectedIconPath": "static/icon/yingyong.png",
+        "text": "应用"
+      },
+      {
+        "pagePath": "pages/abilities/index",
+        "iconPath": "static/icon/nengli.png",
+        "selectedIconPath": "static/icon/nenglifenxi.png",
+        "text": "能力"
+      },
+      {
+        "pagePath": "pages/apps/index",
+        "iconPath": "static/icon/生态.png",
+        "selectedIconPath": "static/icon/news_release.png",
+        "text": "生态"
+      }
+    ]
+  },
+  "usingComponents": {}
 }

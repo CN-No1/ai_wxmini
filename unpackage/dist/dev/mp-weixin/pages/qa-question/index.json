@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "智能法律问答",
-  "usingComponents": {
-    "u-divider": "/uview-ui/components/u-divider/u-divider",
-    "u-input": "/uview-ui/components/u-input/u-input",
-    "u-top-tips": "/uview-ui/components/u-top-tips/u-top-tips"
-  }
-}

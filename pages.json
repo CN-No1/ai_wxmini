@@ -3,44 +3,53 @@
 		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
 	},
 	"pages": [{
-		"path": "pages/index/index",
+		"path": "pages/apps/index",
 		"style": {
-			"navigationBarTitleText": "小法管家"
+			"navigationBarTitleText": "擎盾AI体验中心"
 		}
 	}, {
-		"path": "pages/login/index",
+		"path": "pages/abilities/index",
 		"style": {
-			"navigationBarTitleText": "登录"
+			"navigationBarTitleText": "擎盾AI体验中心"
 		}
-	}, {
-		"path": "pages/login/code",
-		"style": {
-			"navigationBarTitleText": "登录获取验证码"
-		}
-	}, {
-		"path": "pages/news/detail",
-		"style": {
-			"navigationBarTitleText": "热点资讯"
-		}
-	}, {
-		"path": "pages/qa-question/index",
-		"style": {
-			"navigationBarTitleText": "智能法律问答"
-		}
-	}, {
-		"path": "pages/case-detail/index",
-		"style": {}
-	}, {
-		"path": "pages/topic/index",
-		"style": {}
-	}, {
-		"path": "pages/topic/sub-topic",
-		"style": {}
 	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "小法管家",
+		"navigationBarTitleText": "擎盾AI体验中心",
 		"navigationBarBackgroundColor": "#ECF1F7",
 		"backgroundColor": "#FFFFFF"
+	},
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式（list 的索引项）
+		"list": [{
+			"name": "test", //模式名称
+			"path": "pages/index/index" //启动页面，必选
+		}]
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#5495FB",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"height": "30px",
+		"fontSize": "10px",
+		"iconWidth": "24px",
+		"spacing": "3px",
+		"list": [{
+			"pagePath": "pages/apps/index",
+			"iconPath": "static/icon/yingyong(1).png",
+			"selectedIconPath": "static/icon/yingyong.png",
+			"text": "应用"
+		}, {
+			"pagePath": "pages/abilities/index",
+			"iconPath": "static/icon/nengli.png",
+			"selectedIconPath": "static/icon/nenglifenxi.png",
+			"text": "能力"
+		}, {
+			"pagePath": "pages/apps/index",
+			"iconPath": "static/icon/生态.png",
+			"selectedIconPath": "static/icon/news_release.png",
+			"text": "生态"
+		}]
 	}
 }

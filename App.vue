@@ -51,4 +51,9 @@
 
 <style lang="scss">
 	@import "./uview-ui/index.scss";
+
+	@font-face {
+		font-family: 'PINGFANG BOLD';
+		src: url('./static/font/PINGFANG BOLD.TTF');
+	}
 </style>
