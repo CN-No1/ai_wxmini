@@ -2,7 +2,8 @@
   "pages": [
     "pages/apps/index",
     "pages/abilities/index",
-    "pages/news/index"
+    "pages/news/index",
+    "pages/markPaper/index"
   ],
   "subPackages": [],
   "window": {

@@ -8508,7 +8508,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@alpha","_id":"@dcloudio/uni-stat@2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/apps/index": { "navigationBarTitleText": "擎盾AI体验中心" }, "pages/abilities/index": { "navigationBarTitleText": "擎盾AI体验中心" }, "pages/news/index": {} }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "擎盾AI体验中心", "navigationBarBackgroundColor": "#ECF1F7", "backgroundColor": "#FFFFFF" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/apps/index": { "navigationBarTitleText": "擎盾AI体验中心", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/abilities/index": { "navigationBarTitleText": "擎盾AI体验中心", "usingComponents": { "xfl-select": "/components/xfl-select/xfl-select" }, "usingAutoImportComponents": { "u-sticky": "/uview-ui/components/u-sticky/u-sticky" } }, "pages/news/index": { "navigationBarTitleText": "擎盾AI体验中心", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/markPaper/index": { "navigationBarTitleText": "法考阅卷", "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "擎盾AI体验中心", "navigationBarBackgroundColor": "#ECF1F7", "backgroundColor": "#FFFFFF" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
