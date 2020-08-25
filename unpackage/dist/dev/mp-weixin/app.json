@@ -3,7 +3,9 @@
     "pages/apps/index",
     "pages/abilities/index",
     "pages/news/index",
-    "pages/markPaper/index"
+    "pages/markPaper/index",
+    "pages/judicialSummary/index",
+    "pages/engine/index"
   ],
   "subPackages": [],
   "window": {

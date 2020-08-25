@@ -1,0 +1,146 @@
+.judicial-summary.data-v-99d824c6 {
+  background: #f6f7fa;
+  padding-bottom: 66rpx;
+}
+.judicial-summary .intro.data-v-99d824c6 {
+  padding: 40rpx 48rpx 85rpx 55rpx;
+  margin-bottom: 40rpx;
+  background-image: url(../../static/img/bg2.6f3940b5.png);
+}
+.judicial-summary .intro .title.data-v-99d824c6 {
+  font-size: 42rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 600;
+  color: #1a1e30;
+  line-height: 59rpx;
+  margin-bottom: 32rpx;
+}
+.judicial-summary .intro .text.data-v-99d824c6 {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 600;
+  color: #8891b9;
+  line-height: 48rpx;
+}
+.judicial-summary .word.data-v-99d824c6 {
+  width: 690rpx;
+  height: 385rpx;
+  background: #ffffff;
+  box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+  border-radius: 8rpx;
+  padding: 40rpx 53rpx 52rpx 56rpx;
+  position: relative;
+  left: 30rpx;
+  top: -69rpx;
+}
+.judicial-summary .word .doc.data-v-99d824c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.judicial-summary .word .doc image.data-v-99d824c6 {
+  width: 75rpx;
+  height: 80rpx;
+  margin: 0 26rpx 80rpx 0;
+}
+.judicial-summary .word .doc .doc-name.data-v-99d824c6 {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 600;
+  color: #1a1e30;
+  line-height: 42rpx;
+}
+.judicial-summary .word .btns.data-v-99d824c6 {
+  margin-bottom: 40rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 600;
+  line-height: 33rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.judicial-summary .word .btns .text.data-v-99d824c6 {
+  color: #2f7ef9;
+}
+.judicial-summary .word .btns .icon-btn.data-v-99d824c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  width: 128rpx;
+}
+.judicial-summary .word .btns .icon-btn image.data-v-99d824c6 {
+  height: 24rpx;
+  width: 24rpx;
+  margin-right: 16rpx;
+}
+.judicial-summary .word .primary-btn.data-v-99d824c6 {
+  width: 280rpx;
+  height: 72rpx;
+  background: #2f7ef9;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 45rpx;
+  padding: 14rpx 73rpx;
+  margin: 40rpx 0 0 170rpx;
+}
+.judicial-summary .sub.data-v-99d824c6 {
+  padding: 0 30rpx;
+  margin-bottom: 64rpx;
+}
+.judicial-summary .sub .sub-title.data-v-99d824c6 {
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 600;
+  color: #1a1e30;
+  line-height: 45rpx;
+  margin: 0 0 16rpx 16rpx;
+}
+.judicial-summary .sub .sub-content.data-v-99d824c6 {
+  padding: 32rpx 35rpx 48rpx 35rpx;
+  background: #ffffff;
+  box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 600;
+  line-height: 56rpx;
+}
+.judicial-summary .sub .sub-content .scene.data-v-99d824c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.judicial-summary .sub .sub-content .scene .text.data-v-99d824c6 {
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 600;
+  color: #2f7ef9;
+  line-height: 45rpx;
+}
+.judicial-summary .sub .sub-content .scene image.data-v-99d824c6 {
+  width: 48rpx;
+  height: 10rpx;
+}
+

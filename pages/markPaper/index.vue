@@ -187,6 +187,9 @@
 					justify-content: flex-end;
 
 					.icon-btn {
+						display: flex;
+						justify-content: flex-end;
+						align-items: center;
 						width: 128upx;
 
 						image {
@@ -211,7 +214,6 @@
 					margin: 40upx 0 0 170upx;
 				}
 
-				.problem {}
 			}
 
 			.result {
