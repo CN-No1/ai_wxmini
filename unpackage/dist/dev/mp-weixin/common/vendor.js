@@ -11064,38 +11064,24 @@ var install = function install(Vue, vm) {
     params);};
   // 获取客观题解析
   var getObjectiveResult = function getObjectiveResult() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post('http://ai-model.aegis-info.com/exam_answer/predict', params);};
-  // 获取首页机构配置信息
-  var getH5Setting = function getH5Setting() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.get('xiaofa-manager/h5SettingsApi/h5Settings', params);};
-  // 获取法律专题
-  var getCoreFeatures = function getCoreFeatures() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post('xiaofa-manager/subjectApi/multi_subject', params);};
-  // 获取热点资讯
-  var getHotPoint = function getHotPoint() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post('xiaofa-manager/subjectApi/hotPoint', params);};
-  // 热点资讯详情
-  var getHotPointDetails = function getHotPointDetails() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.get('https://epide.aegis-info.com/api/getInfoById', params);};
-  // 推荐问题
-  var getRecommend = function getRecommend() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.get("".concat(xiaofaBaseUrl, "law_inference/simple/recommend"), params);};
-  // 调用小法问答接口
-  var lawApi = function lawApi() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post("".concat(xiaofaBaseUrl, "law_inference/simple/law_qa"), params);};
-  // 获取短信验证码
-  var getCode = function getCode() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.get("sso/getAuthCode", params);};
-  // 登录
-  var login = function login() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post("sso/login2", params, {
-      'content-type': 'application/x-www-form-urlencoded' });};
+  // 获取主观题大题
+  var getSubjectQuestion = function getSubjectQuestion() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.get('http://ai-model.aegis-info.com/exam/subjective/problems',
+    params);};
+  // 获取主观题小题
+  var getSubjectSubQuestion = function getSubjectSubQuestion() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.get('http://ai-model.aegis-info.com/exam/subjective/questions',
+    params);};
+  // 获取学生回答
+  var getSubjectAnswer = function getSubjectAnswer() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.get('http://ai-model.aegis-info.com/exam/subjective/answers', params);};
+  // 获取主观题解析
+  var getSubjectResult = function getSubjectResult() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post('http://ai-model.aegis-info.com/exam_score_test/rate', params);};
 
-  // 获取二级专题
-  var getSubTopic = function getSubTopic() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.get("".concat(xiaofaBaseUrl, "law_inference/simple/recommend/topic"), params);};
   vm.$u.api = {
     getObjectiveQuestions: getObjectiveQuestions,
     getObjectiveResult: getObjectiveResult,
-    getH5Setting: getH5Setting,
-    getCoreFeatures: getCoreFeatures,
-    getHotPoint: getHotPoint,
-    getHotPointDetails: getHotPointDetails,
-    getRecommend: getRecommend,
-    lawApi: lawApi,
-    getCode: getCode,
-    login: login,
-    getSubTopic: getSubTopic };
+    getSubjectQuestion: getSubjectQuestion,
+    getSubjectSubQuestion: getSubjectSubQuestion,
+    getSubjectAnswer: getSubjectAnswer,
+    getSubjectResult: getSubjectResult };
 
 };var _default =
 

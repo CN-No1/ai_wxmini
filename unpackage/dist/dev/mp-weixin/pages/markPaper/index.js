@@ -224,25 +224,65 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 var _default =
 {
   data: function data() {
     return {
-      isExpend: false };
+      isExpend: false,
+      showExpand: false,
+      problemId: '',
+      questionId: '',
+      problemText: '',
+      questionText: '',
+      answerText: '',
+      answer: {
+        answers: [],
+        include_support: true,
+        use_batch: false },
+
+      result: [] };
 
   },
   methods: {
-    expend: function expend() {
-      uni.createSelectorQuery().select(".exp").boundingClientRect(function (res) {
-        debugger;
-        res.height = '100 %';
+    onLoad: function onLoad() {
+      this.getQuestion();
+    },
+    toShowExpand: function toShowExpand() {var _this = this;
+      uni.createSelectorQuery().select(".statement").boundingClientRect(function (res) {
+        _this.showExpand = res.height > 320;
       }).exec();
+    },
+    getQuestion: function getQuestion() {var _this2 = this;
+      this.$u.api.getSubjectQuestion().then(function (res) {
+        _this2.problemText = res.data.description.slice(4);
+        _this2.problemId = res.data.problem_id;
+        setTimeout(_this2.toShowExpand, 500);
+        _this2.getSubQuestion();
+      });
+    },
+    getSubQuestion: function getSubQuestion() {var _this3 = this;
+      this.$u.api.getSubjectSubQuestion({
+        problem_id: this.problemId }).
+      then(function (res) {
+        _this3.questionText = res.data.question_txt;
+        _this3.questionId = res.data.question_id;
+        _this3.getAnswer();
+      });
+    },
+    getAnswer: function getAnswer() {var _this4 = this;
+      this.$u.api.getSubjectAnswer({
+        problem_id: this.problemId,
+        question_id: this.questionId }).
+      then(function (res) {
+        _this4.answer.answers.push(res.data);
+        _this4.answerText = res.data.answer;
+        _this4.result = [];
+      });
+    },
+    getResult: function getResult() {var _this5 = this;
+      this.$u.api.getSubjectResult(this.answer).then(function (res) {
+        _this5.result = res.data[0].marks;
+      });
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
