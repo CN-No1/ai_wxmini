@@ -13,37 +13,27 @@
 			</view>
 			<view class="sub-content">
 				<span class="tag">
-					【单选题】
+					【{{type}}】
 				</span>
 				<span class="text">
-					某镇政府未经通知薛某，强行将薛某的果园铲平。薛某向法院提起行政赔偿诉讼。在法院主持调解时，镇政府为达成调解协议，承认其铲平薛某的果园是不合法的。薛某遂要求镇政府给予加倍赔偿，镇政府不同意。薛某在其后的诉讼中，向法院提供了镇政府在调解过程中承认其行为违法的证据。
-					对该证据，法院应当如何处理？
+					{{statement}}
 				</span>
 				<view class="options">
-					<view class="option-item">
-						A. 法院可以根据镇政府的承认径行宣告镇政府的行为违法
-					</view>
-					<view class="option-item">
-						B. 法院不得采纳该证据
-					</view>
-					<view class="option-item">
-						C. 法院可以采纳该证据，但应当同时参照其他证据进行综合认定
-					</view>
-					<view class="option-item">
-						D. 法院可以要求当事人对该证据进行质证，并根据质证结果决定是否采纳
+					<view class="option-item" v-for="(item,index) in optionList" :key='index'>
+						{{item.option}}. {{item.text}}
 					</view>
 				</view>
 				<view class="change">
-					<view class="icon-btn">
+					<view class="icon-btn" @click="getQuestion">
 						<image src="../../static/icon/huanyihuan.png"></image>换一题
 					</view>
 				</view>
-				<view class="primary-btn">
+				<view class="primary-btn" @click="getResult">
 					一键解析
 				</view>
 			</view>
 		</view>
-		<view class="sub">
+		<view class="sub" v-if="result.length>0">
 			<view class="sub-title">
 				解析结果
 			</view>
@@ -51,7 +41,7 @@
 			<view class="result-wrapper">
 				<view class="result-item" v-for="(item,index) in result" :key='index' :class="item.isCorrect?'isCorrect':''">
 					<view class="text">
-						{{item.text}}
+						{{item.option}}. {{item.text}}
 					</view>
 					<view class="rate">
 						置信度：{{item.rate}}
@@ -66,23 +56,67 @@
 	export default {
 		data() {
 			return {
-				result: [{
-					text: 'A. 法院可以根据镇政府的承认径行宣告镇政府的行为违法',
-					rate: '41.27%',
-					isCorrect: true
-				}, {
-					text: 'B. 法院不得采纳该证据',
-					rate: '41.27%',
-					isCorrect: false
-				}, {
-					text: 'C. 法院可以采纳该证据，但应当同时参照其他证据进行综合认定',
-					rate: '41.27%',
-					isCorrect: true
-				}, {
-					text: 'D. 法院可以要求当事人对该证据进行质证，并根据质证结果决定是否采纳',
-					rate: '41.27%',
-					isCorrect: false
-				}]
+				reqObj: {},
+				statement: '',
+				type: '',
+				optionList: [],
+				result: []
+			}
+		},
+
+		computed: {
+
+		},
+
+		methods: {
+			onLoad() {
+				this.getQuestion()
+			},
+			getQuestion() {
+				this.result = [];
+				this.$u.api.getObjectiveQuestions().then(res => {
+					const resObj = Object.assign({}, res.data);
+					const option = resObj.option_list;
+					this.reqObj = {
+						id: resObj.id,
+						option_list: resObj.option_list,
+						statement: resObj.statement
+					}
+					this.statement = resObj.statement;
+					this.type = resObj.type;
+					this.optionList = []
+					Object.keys(option).map(key => {
+						let obj = {
+							option: key,
+							text: option[key]
+						}
+						this.optionList.push(obj)
+					})
+				})
+			},
+			getResult() {
+				uni.showLoading({
+					title: "解析中..."
+				})
+				this.$u.api.getObjectiveResult(this.reqObj).then(res => {
+					const answer = res.data.answer;
+					const rates = res.data.prob;
+					this.result = [].concat(this.optionList);
+					this.result.map(item => {
+						item.isCorrect = answer.includes(item.option);
+					})
+					rates.map(rate => {
+						setTimeout(() => {
+							uni.hideLoading()
+						}, 2000)
+						let opt = Object.keys(rate)[0];
+						this.result.map(res => {
+							if (res.option === opt) {
+								res.rate = (rate[opt] * 100).toFixed(2) + '%';
+							}
+						})
+					})
+				})
 			}
 		}
 	}
@@ -191,7 +225,6 @@
 			}
 
 			.result-wrapper {
-				padding: 32upx 0 48upx 0;
 				background: rgba(255, 255, 255, 1);
 				box-shadow: 0upx 6upx 11upx 0upx rgba(231, 238, 255, 1);
 				border-radius: 8upx;
@@ -211,10 +244,6 @@
 						border-bottom: 1upx solid rgba(231, 231, 231, 1);
 					}
 
-					&:first-child {
-						padding-top: 0;
-					}
-
 					.text {
 						color: rgba(26, 30, 48, 1);
 					}
@@ -225,6 +254,7 @@
 				}
 
 				.isCorrect {
+					border-bottom: none;
 
 					.text,
 					.rate {

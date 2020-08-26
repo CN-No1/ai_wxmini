@@ -133,17 +133,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -201,25 +191,69 @@ var _default =
 {
   data: function data() {
     return {
-      result: [{
-        text: 'A. 法院可以根据镇政府的承认径行宣告镇政府的行为违法',
-        rate: '41.27%',
-        isCorrect: true },
-      {
-        text: 'B. 法院不得采纳该证据',
-        rate: '41.27%',
-        isCorrect: false },
-      {
-        text: 'C. 法院可以采纳该证据，但应当同时参照其他证据进行综合认定',
-        rate: '41.27%',
-        isCorrect: true },
-      {
-        text: 'D. 法院可以要求当事人对该证据进行质证，并根据质证结果决定是否采纳',
-        rate: '41.27%',
-        isCorrect: false }] };
+      reqObj: {},
+      statement: '',
+      type: '',
+      optionList: [],
+      result: [] };
+
+  },
+
+  computed: {},
 
 
-  } };exports.default = _default;
+
+  methods: {
+    onLoad: function onLoad() {
+      this.getQuestion();
+    },
+    getQuestion: function getQuestion() {var _this = this;
+      this.result = [];
+      this.$u.api.getObjectiveQuestions().then(function (res) {
+        var resObj = Object.assign({}, res.data);
+        var option = resObj.option_list;
+        _this.reqObj = {
+          id: resObj.id,
+          option_list: resObj.option_list,
+          statement: resObj.statement };
+
+        _this.statement = resObj.statement;
+        _this.type = resObj.type;
+        _this.optionList = [];
+        Object.keys(option).map(function (key) {
+          var obj = {
+            option: key,
+            text: option[key] };
+
+          _this.optionList.push(obj);
+        });
+      });
+    },
+    getResult: function getResult() {var _this2 = this;
+      uni.showLoading({
+        title: "解析中..." });
+
+      this.$u.api.getObjectiveResult(this.reqObj).then(function (res) {
+        var answer = res.data.answer;
+        var rates = res.data.prob;
+        _this2.result = [].concat(_this2.optionList);
+        _this2.result.map(function (item) {
+          item.isCorrect = answer.includes(item.option);
+        });
+        rates.map(function (rate) {
+          setTimeout(function () {
+            uni.hideLoading();
+          }, 2000);
+          var opt = Object.keys(rate)[0];
+          _this2.result.map(function (res) {
+            if (res.option === opt) {
+              res.rate = (rate[opt] * 100).toFixed(2) + '%';
+            }
+          });
+        });
+      });
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

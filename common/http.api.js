@@ -1,5 +1,10 @@
 const xiaofaBaseUrl = 'https://xiaofa.aegis-info.com/api/'
 const install = (Vue, vm) => {
+	// 获取客观题
+	const getObjectiveQuestions = (params = {}) => vm.$u.get('http://ai-model.aegis-info.com/exam/objective/questions',
+		params);
+	// 获取客观题解析
+	const getObjectiveResult = (params = {}) => vm.$u.post('http://ai-model.aegis-info.com/exam_answer/predict', params)
 	// 获取首页机构配置信息
 	const getH5Setting = (params = {}) => vm.$u.get('xiaofa-manager/h5SettingsApi/h5Settings', params);
 	// 获取法律专题
@@ -15,10 +20,14 @@ const install = (Vue, vm) => {
 	// 获取短信验证码
 	const getCode = (params = {}) => vm.$u.get(`sso/getAuthCode`, params);
 	// 登录
-	const login = (params = {}) => vm.$u.post(`sso/login2`, params,  {'content-type': 'application/x-www-form-urlencoded'});
+	const login = (params = {}) => vm.$u.post(`sso/login2`, params, {
+		'content-type': 'application/x-www-form-urlencoded'
+	});
 	// 获取二级专题
 	const getSubTopic = (params = {}) => vm.$u.get(`${xiaofaBaseUrl}law_inference/simple/recommend/topic`, params);
 	vm.$u.api = {
+		getObjectiveQuestions,
+		getObjectiveResult,
 		getH5Setting,
 		getCoreFeatures,
 		getHotPoint,

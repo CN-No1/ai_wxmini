@@ -95,7 +95,6 @@
   margin: 40rpx 0 0 170rpx;
 }
 .exam .sub .result-wrapper.data-v-642fde1d {
-  padding: 32rpx 0 48rpx 0;
   background: #ffffff;
   box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
   border-radius: 8rpx;
@@ -114,9 +113,6 @@
 .exam .sub .result-wrapper .result-item.data-v-642fde1d:not(:last-child) {
   border-bottom: 1rpx solid #e7e7e7;
 }
-.exam .sub .result-wrapper .result-item.data-v-642fde1d:first-child {
-  padding-top: 0;
-}
 .exam .sub .result-wrapper .result-item .text.data-v-642fde1d {
   color: #1a1e30;
 }
@@ -124,6 +120,7 @@
   color: #fe625f;
 }
 .exam .sub .result-wrapper .isCorrect.data-v-642fde1d {
+  border-bottom: none;
   background: -webkit-linear-gradient(left, #42d2ad 0%, #30bc98 100%);
   background: linear-gradient(90deg, #42d2ad 0%, #30bc98 100%);
 }

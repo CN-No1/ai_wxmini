@@ -11059,6 +11059,11 @@ if (hadRuntime) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var xiaofaBaseUrl = 'https://xiaofa.aegis-info.com/api/';
 var install = function install(Vue, vm) {
+  // 获取客观题
+  var getObjectiveQuestions = function getObjectiveQuestions() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.get('http://ai-model.aegis-info.com/exam/objective/questions',
+    params);};
+  // 获取客观题解析
+  var getObjectiveResult = function getObjectiveResult() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post('http://ai-model.aegis-info.com/exam_answer/predict', params);};
   // 获取首页机构配置信息
   var getH5Setting = function getH5Setting() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.get('xiaofa-manager/h5SettingsApi/h5Settings', params);};
   // 获取法律专题
@@ -11074,10 +11079,14 @@ var install = function install(Vue, vm) {
   // 获取短信验证码
   var getCode = function getCode() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.get("sso/getAuthCode", params);};
   // 登录
-  var login = function login() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post("sso/login2", params, { 'content-type': 'application/x-www-form-urlencoded' });};
+  var login = function login() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post("sso/login2", params, {
+      'content-type': 'application/x-www-form-urlencoded' });};
+
   // 获取二级专题
   var getSubTopic = function getSubTopic() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.get("".concat(xiaofaBaseUrl, "law_inference/simple/recommend/topic"), params);};
   vm.$u.api = {
+    getObjectiveQuestions: getObjectiveQuestions,
+    getObjectiveResult: getObjectiveResult,
     getH5Setting: getH5Setting,
     getCoreFeatures: getCoreFeatures,
     getHotPoint: getHotPoint,
