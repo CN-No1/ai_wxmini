@@ -11057,8 +11057,7 @@ if (hadRuntime) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var xiaofaBaseUrl = 'https://xiaofa.aegis-info.com/api/';
-var install = function install(Vue, vm) {
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var install = function install(Vue, vm) {
   // 获取客观题
   var getObjectiveQuestions = function getObjectiveQuestions() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.get('http://ai-model.aegis-info.com/exam/objective/questions',
     params);};
@@ -11074,6 +11073,8 @@ var install = function install(Vue, vm) {
   var getSubjectAnswer = function getSubjectAnswer() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.get('http://ai-model.aegis-info.com/exam/subjective/answers', params);};
   // 获取主观题解析
   var getSubjectResult = function getSubjectResult() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post('http://ai-model.aegis-info.com/exam_score_test/rate', params);};
+  // 获取司法摘要解析
+  var getJudicialSummaryResult = function getJudicialSummaryResult() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post('http://58.213.45.42:6800/v2/api/summary/sfzy', params);};
 
   vm.$u.api = {
     getObjectiveQuestions: getObjectiveQuestions,
@@ -11081,7 +11082,8 @@ var install = function install(Vue, vm) {
     getSubjectQuestion: getSubjectQuestion,
     getSubjectSubQuestion: getSubjectSubQuestion,
     getSubjectAnswer: getSubjectAnswer,
-    getSubjectResult: getSubjectResult };
+    getSubjectResult: getSubjectResult,
+    getJudicialSummaryResult: getJudicialSummaryResult };
 
 };var _default =
 

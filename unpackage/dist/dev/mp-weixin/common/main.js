@@ -21,7 +21,7 @@ var _uviewUi = _interopRequireDefault(__webpack_require__(/*! ./uview-ui */ 15))
 var _httpInterceptor = _interopRequireDefault(__webpack_require__(/*! @/common/http.interceptor.js */ 41));
 var _httpApi = _interopRequireDefault(__webpack_require__(/*! @/common/http.api.js */ 45));
 var _utils = _interopRequireDefault(__webpack_require__(/*! @/common/utils.js */ 46));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}_vue.default.config.productionTip = false;_vue.default.use(_uviewUi.default);_App.default.mpType = 'app';var app = new _vue.default(_objectSpread({}, _App.default));
-_vue.default.use(_httpInterceptor.default, app);
+// Vue.use(HttpInterceptor, app);
 // http接口API集中管理引入部分
 _vue.default.use(_httpApi.default, app);
 
