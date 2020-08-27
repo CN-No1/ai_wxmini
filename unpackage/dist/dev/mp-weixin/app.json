@@ -41,12 +41,11 @@
       },
       {
         "pagePath": "pages/news/index",
-        "iconPath": "static/icon/生态.png",
+        "iconPath": "static/icon/shengtai.png",
         "selectedIconPath": "static/icon/news_release.png",
         "text": "生态"
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap62.json"
+  "usingComponents": {}
 }

@@ -157,37 +157,37 @@ var _default =
   data: function data() {
     return {
       appList: [{
-        img: '../../static/icon/交互式智能合同审查.png',
+        img: '../../static/icon/contract.png',
         name: '交互式智能合同审查',
         url: '' },
       {
-        img: '../../static/icon/司法摘要.png',
+        img: '../../static/icon/judicialSummary.png',
         name: '司法摘要',
         url: 'pages/judicialSummary/index' },
       {
-        img: '../../static/icon/智慧法考.png',
+        img: '../../static/icon/exam.png',
         name: '智慧法考',
         url: 'pages/exam/index' },
       {
-        img: '../../static/icon/法考阅卷.png',
+        img: '../../static/icon/markPaper.png',
         name: '法考阅卷',
         url: 'pages/markPaper/index' },
       {
-        img: '../../static/icon/智能规则引擎.png',
+        img: '../../static/icon/engine.png',
         name: '智能规则引擎',
-        url: '' },
+        url: 'pages/engine/index' },
       {
-        img: '../../static/icon/刑事量刑智能预测.png',
+        img: '../../static/icon/Sentencing.png',
         name: '刑事量刑智能预测',
-        url: '' },
+        url: 'https://h5.law.push.aegis-info.com/html/index.html?id=5806' },
       {
-        img: '../../static/icon/法条检索.png',
+        img: '../../static/icon/lawSearch.png',
         name: '法条检索',
-        url: '' },
+        url: 'https://shilv-h5.aegis-info.com/' },
       {
-        img: '../../static/icon/案例检索.png',
+        img: '../../static/icon/caseSearch.png',
         name: '案例检索',
-        url: '' }] };
+        url: 'https://t-picklaw.aegis-info.com/home' }] };
 
 
   },
@@ -196,12 +196,18 @@ var _default =
 
   methods: {
     nav: function nav(urls) {
-      this.$u.route({
-        url: urls });
+      if (urls.indexOf('http') > 0) {
+        this.$u.route({
+          url: 'pages/newurl/index',
+          params: {
+            url: urls } });
 
-      // wx.navigateTo({
-      // 	url: urls
-      // })
+
+      } else {
+        this.$u.route({
+          url: urls });
+
+      }
     } } };exports.default = _default;
 
 /***/ }),

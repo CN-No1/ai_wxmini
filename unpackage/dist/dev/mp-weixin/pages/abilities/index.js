@@ -97,7 +97,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   "u-sticky": () =>
-    __webpack_require__.e(/*! import() | uview-ui/components/u-sticky/u-sticky */ "uview-ui/components/u-sticky/u-sticky").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-sticky/u-sticky.vue */ 117))
+    __webpack_require__.e(/*! import() | uview-ui/components/u-sticky/u-sticky */ "uview-ui/components/u-sticky/u-sticky").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-sticky/u-sticky.vue */ 117)),
+  "u-toast": () =>
+    __webpack_require__.e(/*! import() | uview-ui/components/u-toast/u-toast */ "uview-ui/components/u-toast/u-toast").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-toast/u-toast.vue */ 124))
 }
 var render = function() {
   var _vm = this
@@ -136,7 +138,8 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var xflSelect = function xflSelect() {return __webpack_require__.e(/*! import() | components/xfl-select/xfl-select */ "components/xfl-select/xfl-select").then(__webpack_require__.bind(null, /*! ../../components/xfl-select/xfl-select.vue */ 124));};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var xflSelect = function xflSelect() {return __webpack_require__.e(/*! import() | components/xfl-select/xfl-select */ "components/xfl-select/xfl-select").then(__webpack_require__.bind(null, /*! ../../components/xfl-select/xfl-select.vue */ 131));};var _default =
+
 
 
 
@@ -183,61 +186,77 @@ __webpack_require__.r(__webpack_exports__);
         name: '舆情分析类',
         abs: [{
           name: '舆情垃圾文本识别',
-          img: '../../static/icon/舆情垃圾.png' },
+          img: '../../static/icon/rubbish.png',
+          url: 'pages/publicSentiment/index' },
         {
           name: '舆情正负面分类',
-          img: '../../static/icon/舆情正负面.png' },
+          img: '../../static/icon/PosOrNeg.png',
+          url: '' },
         {
           name: '舆情法规文本密度计算',
-          img: '../../static/icon/舆情法规.png' }] },
+          img: '../../static/icon/lawRule.png',
+          url: '' }] },
 
       {
         name: '语义计算类',
         abs: [{
           name: '句子语义抽象化',
-          img: '../../static/icon/句子语义.png' },
+          img: '../../static/icon/semanteme.png',
+          url: '' },
         {
           name: '事件角色标注',
-          img: '../../static/icon/事件角色.png' },
+          img: '../../static/icon/role.png',
+          url: '' },
         {
           name: '相关问题推荐',
-          img: '../../static/icon/相关问题.png' },
+          img: '../../static/icon/relative.png',
+          url: '' },
         {
           name: '风险类别评估专题分类',
-          img: '../../static/icon/风险类.png' }] },
+          img: '../../static/icon/risk.png',
+          url: '' }] },
 
       {
         name: '信息识别类',
         abs: [{
           name: '三元组抽取',
-          img: '../../static/icon/三元组.png' },
+          img: '../../static/icon/Triplet.png',
+          url: '' },
         {
           name: '实体识别',
-          img: '../../static/icon/实体识别.png' },
+          img: '../../static/icon/recognition.png',
+          url: '' },
         {
           name: '事件抽取',
-          img: '../../static/icon/事件抽取.png' },
+          img: '../../static/icon/extraction.png',
+          url: '' },
         {
           name: '要素抽取',
-          img: '../../static/icon/要素抽取.png' },
+          img: '../../static/icon/element.png',
+          url: '' },
         {
           name: '角色识别',
-          img: '../../static/icon/角色识别.png' }] },
+          img: '../../static/icon/RoleRecognition.png',
+          url: '' }] },
 
       {
         name: '文本生成类',
         abs: [{
           name: '法律问题改写',
-          img: '../../static/icon/编组 13.png' },
+          img: '../../static/icon/law.png',
+          url: '' },
         {
           name: '摘要生成',
-          img: '../../static/icon/编组.png' },
+          img: '../../static/icon/abstract.png',
+          url: '' },
         {
           name: '相似问题改写',
-          img: '../../static/icon/形似问题改写.png' },
+          img: '../../static/icon/q1.png',
+          url: '' },
         {
           name: '问答答案生产',
-          img: '../../static/icon/问答答案生产.png' }] }] };
+          img: '../../static/icon/q2.png',
+          url: '' }] }] };
 
 
 
@@ -261,6 +280,28 @@ __webpack_require__.r(__webpack_exports__);
 
         }).exec();
       }).exec();
+    },
+
+    nav: function nav(urls) {
+      if (urls.indexOf('http') > 0) {
+        this.$u.route({
+          url: 'pages/newurl/index',
+          params: {
+            url: urls } });
+
+
+      } else {
+        if (urls === '') {
+          uni.showToast({
+            title: '更多能力，即将上线！',
+            icon: 'none',
+            duration: 1000 });
+
+        }
+        this.$u.route({
+          url: urls });
+
+      }
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

@@ -15,7 +15,7 @@
 					{{item.name}}
 				</view>
 				<view class="abilities-wrapper-inner">
-					<view class="abilities-item" v-for="(i, index) in item.abs" :key="index">
+					<view class="abilities-item" v-for="(i, index) in item.abs" :key="index" @click="nav(i.url)">
 						<image :src="i.img" class="abilities-icon"></image>
 						<view class="abilities-name">
 							{{i.name}}
@@ -24,6 +24,7 @@
 				</view>
 			</view>
 		</view>
+		<u-toast ref="uToast" />
 	</view>
 </template>
 
@@ -45,61 +46,77 @@
 					name: '舆情分析类',
 					abs: [{
 						name: '舆情垃圾文本识别',
-						img: '../../static/icon/舆情垃圾.png',
+						img: '../../static/icon/rubbish.png',
+						url: 'pages/publicSentiment/index'
 					}, {
 						name: '舆情正负面分类',
-						img: '../../static/icon/舆情正负面.png',
+						img: '../../static/icon/PosOrNeg.png',
+						url: ''
 					}, {
 						name: '舆情法规文本密度计算',
-						img: '../../static/icon/舆情法规.png',
+						img: '../../static/icon/lawRule.png',
+						url: ''
 					}]
 				}, {
 					name: '语义计算类',
 					abs: [{
 						name: '句子语义抽象化',
-						img: '../../static/icon/句子语义.png',
+						img: '../../static/icon/semanteme.png',
+						url: ''
 					}, {
 						name: '事件角色标注',
-						img: '../../static/icon/事件角色.png',
+						img: '../../static/icon/role.png',
+						url: ''
 					}, {
 						name: '相关问题推荐',
-						img: '../../static/icon/相关问题.png',
+						img: '../../static/icon/relative.png',
+						url: ''
 					}, {
 						name: '风险类别评估专题分类',
-						img: '../../static/icon/风险类.png',
+						img: '../../static/icon/risk.png',
+						url: ''
 					}]
 				}, {
 					name: '信息识别类',
 					abs: [{
 						name: '三元组抽取',
-						img: '../../static/icon/三元组.png',
+						img: '../../static/icon/Triplet.png',
+						url: ''
 					}, {
 						name: '实体识别',
-						img: '../../static/icon/实体识别.png',
+						img: '../../static/icon/recognition.png',
+						url: ''
 					}, {
 						name: '事件抽取',
-						img: '../../static/icon/事件抽取.png',
+						img: '../../static/icon/extraction.png',
+						url: ''
 					}, {
 						name: '要素抽取',
-						img: '../../static/icon/要素抽取.png',
+						img: '../../static/icon/element.png',
+						url: ''
 					}, {
 						name: '角色识别',
-						img: '../../static/icon/角色识别.png',
+						img: '../../static/icon/RoleRecognition.png',
+						url: ''
 					}]
 				}, {
 					name: '文本生成类',
 					abs: [{
 						name: '法律问题改写',
-						img: '../../static/icon/编组 13.png',
+						img: '../../static/icon/law.png',
+						url: ''
 					}, {
 						name: '摘要生成',
-						img: '../../static/icon/编组.png',
+						img: '../../static/icon/abstract.png',
+						url: ''
 					}, {
 						name: '相似问题改写',
-						img: '../../static/icon/形似问题改写.png',
+						img: '../../static/icon/q1.png',
+						url: ''
 					}, {
 						name: '问答答案生产',
-						img: '../../static/icon/问答答案生产.png',
+						img: '../../static/icon/q2.png',
+						url: ''
 					}]
 				}]
 			}
@@ -123,6 +140,28 @@
 						})
 					}).exec()
 				}).exec()
+			},
+
+			nav(urls) {
+				if (urls.indexOf('http') > 0) {
+					this.$u.route({
+						url: 'pages/newurl/index',
+						params: {
+							url: urls
+						}
+					});
+				} else {
+					if (urls === '') {
+						uni.showToast({
+							title: '更多能力，即将上线！',
+							icon: 'none',
+							duration: 1000
+						})
+					}
+					this.$u.route({
+						url: urls,
+					})
+				}
 			}
 		}
 	}

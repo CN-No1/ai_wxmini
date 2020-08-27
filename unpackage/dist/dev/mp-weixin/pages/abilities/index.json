@@ -2,6 +2,7 @@
   "navigationBarTitleText": "擎盾AI体验中心",
   "usingComponents": {
     "u-sticky": "/uview-ui/components/u-sticky/u-sticky",
+    "u-toast": "/uview-ui/components/u-toast/u-toast",
     "xfl-select": "/components/xfl-select/xfl-select"
   }
 }
