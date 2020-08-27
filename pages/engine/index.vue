@@ -1,5 +1,5 @@
 <template>
-	<view class="judicial-summary">
+	<view class="engine">
 		<view class="intro">
 			<view class="title">
 				智能规则引擎应用简介
@@ -12,52 +12,53 @@
 			<view class="doc">
 				<image src="../../static/icon/word.png"></image>
 				<view class="doc-name">
-					某某与李某甲、李某乙等继承纠纷审民事判决书
+					{{title}}
 				</view>
 			</view>
 			<view class="btns">
 				<view class="text">
-					在线浏览
+					<!-- 在线浏览 -->
 				</view>
-				<view class="icon-btn">
+				<view class="icon-btn" @click="getText">
 					<image src="../../static/icon/huanyihuan.png"></image>换一篇
 				</view>
 			</view>
-			<view class="primary-btn">
+			<view class="primary-btn" @click="getResult">
 				一键解析
 			</view>
 		</view>
 
-		<view class="sub">
+		<view class="sub" v-if="showResult">
 			<view class="sub-title">
 				基础解析
 			</view>
 			<view class="sub-content">
 				<view class="sub-item">
-					<view><span>法院：</span><span>上海市奉贤区人民法院</span></view>
-					<view><span>案号：</span><span>（2015）奉刑初字第2076号</span></view>
-					<view><span>案由：</span><span>合同诈骗罪</span></view>
-					<view><span>文书类型：</span><span>判决书</span></view>
-					<view><span>审理程序：</span><span>一审</span></view>
-					<view><span>判决日期：</span><span>2016-01-21</span></view>
-					<view><span>文书分段：</span><span></span></view>
+					<view><span>法院：</span><span>{{baseRes.court}}</span></view>
+					<view><span>案号：</span><span>{{baseRes.case_number}}</span></view>
+					<view><span>案由：</span><span>{{baseRes.cause.toString()}}</span></view>
+					<view><span>文书类型：</span><span>{{baseRes.doc_type}}</span></view>
+					<view><span>审理程序：</span><span>{{baseRes.trial_round}}</span></view>
+					<view><span>判决日期：</span><span>{{baseRes.decide_time}}</span></view>
+					<!-- <view><span>文书分段：</span><span></span></view> -->
 				</view>
 			</view>
 		</view>
 
-		<view class="sub">
+		<view class="sub" v-if="showResult&&ruleRes.length>0">
 			<view class="sub-title">
 				规则解析
 			</view>
 			<view class="sub-content">
 				<view class="sub-item">
-					<view><span>法院：</span><span>上海市奉贤区人民法院</span></view>
-					<view><span>案号：</span><span>（2015）奉刑初字第2076号</span></view>
-					<view><span>案由：</span><span>合同诈骗罪</span></view>
-					<view><span>文书类型：</span><span>判决书</span></view>
-					<view><span>审理程序：</span><span>一审</span></view>
-					<view><span>判决日期：</span><span>2016-01-21</span></view>
-					<view><span>文书分段：</span><span></span></view>
+					<view v-for="(item,index) in ruleRes" :key='index'>
+						<view class="parent">
+							{{item.name}}
+						</view>
+						<view v-for="(i,index) in item.infoList" :key="index" class="child">
+							{{i.key}}: {{i.value}}
+						</view>
+					</view>
 				</view>
 			</view>
 		</view>
@@ -66,12 +67,92 @@
 </template>
 
 <script>
+	export default {
+		data() {
+			return {
+				showResult: false,
+				textList: [{
+						"caseNumber": "（2016）黑04刑初11号",
+						"title": "王振奎、刘运梅等非法持有毒品罪一审刑事判决书"
+					},
+					{
+						"caseNumber": "（2016）湘0722刑初233号",
+						"title": "方彪走私、贩卖、运输、制造毒品罪一审刑事判决书"
+					},
+					{
+						"caseNumber": "(2016)陕0424民初2078号",
+						"title": "高某某与许某离婚纠纷一审民事判决书"
+					},
+					{
+						"caseNumber": "(2016)苏0724民初4782号",
+						"title": "高某与乔某1离婚纠纷一审民事判决书"
+					},
+					{
+						"caseNumber": "（2016）豫0581民初3608号",
+						"title": "郭某与李某甲离婚纠纷一审民事判决书"
+					}
+				],
+				index: 0,
+				baseRes: {},
+				ruleRes: []
+			}
+		},
+		computed: {
+			title() {
+				return this.textList[this.index].title;
+			},
+			caseNumber() {
+				return this.textList[this.index].caseNumber;
+			}
+		},
+		methods: {
+			onLoad() {
+				this.getText();
+			},
+			getText() {
+				this.index = this.index > 4 ? 0 : this.index + 1
+				this.showResult = false;
+			},
+			getResult() {
+				uni.request({
+					url: 'http://tagresolve.aegis-info.com/api/v1/graph/parse/',
+					method: 'POST',
+					data: {
+						graph_id: '5d9fdf26b6f586db6e347f5a',
+						case_number: this.caseNumber
+					},
+					header: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					}
+				}).then(res => {
+					const data = res[1].data.data[0];
+					this.baseRes = data.document;
+					Object.keys(data.fields).map(key => {
+						data.fields[key].infoList = [];
+						if (data.fields[key].value.length > 0) {
+							data.fields[key].value.map(k => {
+								let obj = {};
+								obj.key = Object.keys(k)[0];
+								obj.value = k[Object.keys(k)[0]].toString();
+								data.fields[key].infoList.push(obj);
+							})
+						}
+						this.ruleRes.push(data.fields[key]);
+						console.log(this.ruleRes)
+					})
+					this.showResult = true;
+				})
+
+			}
+		}
+	}
 </script>
 
 <style lang="less" scoped>
-	.judicial-summary {
+	.engine {
 		background: rgba(246, 247, 250, 1);
 		padding-bottom: 66upx;
+		min-height: 1460upx;
 
 		.intro {
 			padding: 40upx 48upx 85upx 55upx;
@@ -118,6 +199,7 @@
 				}
 
 				.doc-name {
+					flex: 1;
 					font-size: 28upx;
 					font-family: PingFangSC-Regular, PingFang SC;
 					font-weight: 600;
@@ -197,6 +279,14 @@
 					font-weight: 600;
 					color: rgba(26, 30, 48, 1);
 					line-height: 56upx;
+
+					.parent {
+						font-size: 30upx;
+					}
+
+					.child {
+						text-indent: 25upx;
+					}
 				}
 			}
 		}

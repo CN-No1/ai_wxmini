@@ -18,7 +18,7 @@
 			</view>
 			<view class="btns">
 				<view class="text" @click="preview">
-					在线浏览
+					<!-- 在线浏览 -->
 				</view>
 				<view class="icon-btn" @click="change">
 					<image src="../../static/icon/huanyihuan.png"></image>换一篇

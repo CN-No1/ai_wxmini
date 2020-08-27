@@ -18,6 +18,8 @@ const install = (Vue, vm) => {
 	const getJudicialSummaryResult = (params = {}) => vm.$u.post('http://58.213.45.42:6800/v2/api/summary/sfzy', params);
 	// 获取舆情文本解析
 	const getPublicSentimentResult = (params = {}) => vm.$u.get('http://domainc.aegis-info.com/domain_predict', params);
+	// 获取规则引擎解析
+	const getEngineResult = (params = {}) => vm.$u.post('http://tagresolve.aegis-info.com/api/v1/graph/parse/', params);
 
 	vm.$u.api = {
 		getObjectiveQuestions,
@@ -27,7 +29,8 @@ const install = (Vue, vm) => {
 		getSubjectAnswer,
 		getSubjectResult,
 		getJudicialSummaryResult,
-		getPublicSentimentResult
+		getPublicSentimentResult,
+		getEngineResult
 	}
 }
 

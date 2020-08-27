@@ -11077,6 +11077,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   var getJudicialSummaryResult = function getJudicialSummaryResult() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post('http://58.213.45.42:6800/v2/api/summary/sfzy', params);};
   // 获取舆情文本解析
   var getPublicSentimentResult = function getPublicSentimentResult() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.get('http://domainc.aegis-info.com/domain_predict', params);};
+  // 获取规则引擎解析
+  var getEngineResult = function getEngineResult() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post('http://tagresolve.aegis-info.com/api/v1/graph/parse/', params);};
 
   vm.$u.api = {
     getObjectiveQuestions: getObjectiveQuestions,
@@ -11086,7 +11088,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     getSubjectAnswer: getSubjectAnswer,
     getSubjectResult: getSubjectResult,
     getJudicialSummaryResult: getJudicialSummaryResult,
-    getPublicSentimentResult: getPublicSentimentResult };
+    getPublicSentimentResult: getPublicSentimentResult,
+    getEngineResult: getEngineResult };
 
 };var _default =
 

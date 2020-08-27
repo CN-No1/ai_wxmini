@@ -100,6 +100,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var g0 = _vm.baseRes.cause.toString()
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        g0: g0
+      }
+    }
+  )
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -133,6 +142,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -200,7 +210,85 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+var _default =
+{
+  data: function data() {
+    return {
+      showResult: false,
+      textList: [{
+        "caseNumber": "（2016）黑04刑初11号",
+        "title": "王振奎、刘运梅等非法持有毒品罪一审刑事判决书" },
 
+      {
+        "caseNumber": "（2016）湘0722刑初233号",
+        "title": "方彪走私、贩卖、运输、制造毒品罪一审刑事判决书" },
+
+      {
+        "caseNumber": "(2016)陕0424民初2078号",
+        "title": "高某某与许某离婚纠纷一审民事判决书" },
+
+      {
+        "caseNumber": "(2016)苏0724民初4782号",
+        "title": "高某与乔某1离婚纠纷一审民事判决书" },
+
+      {
+        "caseNumber": "（2016）豫0581民初3608号",
+        "title": "郭某与李某甲离婚纠纷一审民事判决书" }],
+
+
+      index: 0,
+      baseRes: {},
+      ruleRes: [] };
+
+  },
+  computed: {
+    title: function title() {
+      return this.textList[this.index].title;
+    },
+    caseNumber: function caseNumber() {
+      return this.textList[this.index].caseNumber;
+    } },
+
+  methods: {
+    onLoad: function onLoad() {
+      this.getText();
+    },
+    getText: function getText() {
+      this.index = this.index > 4 ? 0 : this.index + 1;
+      this.showResult = false;
+    },
+    getResult: function getResult() {var _this = this;
+      uni.request({
+        url: 'http://tagresolve.aegis-info.com/api/v1/graph/parse/',
+        method: 'POST',
+        data: {
+          graph_id: '5d9fdf26b6f586db6e347f5a',
+          case_number: this.caseNumber },
+
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded" } }).
+
+      then(function (res) {
+        var data = res[1].data.data[0];
+        _this.baseRes = data.document;
+        Object.keys(data.fields).map(function (key) {
+          data.fields[key].infoList = [];
+          if (data.fields[key].value.length > 0) {
+            data.fields[key].value.map(function (k) {
+              var obj = {};
+              obj.key = Object.keys(k)[0];
+              obj.value = k[Object.keys(k)[0]].toString();
+              data.fields[key].infoList.push(obj);
+            });
+          }
+          _this.ruleRes.push(data.fields[key]);
+          console.log(_this.ruleRes);
+        });
+        _this.showResult = true;
+      });
+
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
