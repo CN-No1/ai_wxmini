@@ -73,10 +73,16 @@
 		},
 		methods: {
 			preview() {
-				uni.openURL(this.docList[this.index].url);
+				this.$u.route({
+					url: 'pages/newurl/index',
+					params: {
+						url: this.docList[this.index].url
+					}
+				});
 			},
 			change() {
 				this.index = this.index ? 0 : 1;
+				this.result = '';
 			},
 			getResult() {
 				this.$u.api.getJudicialSummaryResult({

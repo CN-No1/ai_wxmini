@@ -8508,7 +8508,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@alpha","_id":"@dcloudio/uni-stat@2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/apps/index": { "navigationBarTitleText": "擎盾AI体验中心", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/abilities/index": { "navigationBarTitleText": "擎盾AI体验中心", "usingComponents": { "xfl-select": "/components/xfl-select/xfl-select" }, "usingAutoImportComponents": { "u-sticky": "/uview-ui/components/u-sticky/u-sticky" } }, "pages/news/index": { "navigationBarTitleText": "擎盾AI体验中心", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/markPaper/index": { "navigationBarTitleText": "法考阅卷", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/judicialSummary/index": { "navigationBarTitleText": "司法摘要", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/engine/index": { "navigationBarTitleText": "智能规则引擎", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/exam/index": { "navigationBarTitleText": "智慧法考", "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "擎盾AI体验中心", "navigationBarBackgroundColor": "#ECF1F7", "backgroundColor": "#FFFFFF" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/apps/index": { "navigationBarTitleText": "擎盾AI体验中心", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/abilities/index": { "navigationBarTitleText": "擎盾AI体验中心", "usingComponents": { "xfl-select": "/components/xfl-select/xfl-select" }, "usingAutoImportComponents": { "u-sticky": "/uview-ui/components/u-sticky/u-sticky" } }, "pages/news/index": { "navigationBarTitleText": "擎盾AI体验中心", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/markPaper/index": { "navigationBarTitleText": "法考阅卷", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/judicialSummary/index": { "navigationBarTitleText": "司法摘要", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/engine/index": { "navigationBarTitleText": "智能规则引擎", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/exam/index": { "navigationBarTitleText": "智慧法考", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/publicSentiment/index": { "navigationBarTitleText": "舆情垃圾文本识别", "usingComponents": {}, "usingAutoImportComponents": { "u-line-progress": "/uview-ui/components/u-line-progress/u-line-progress" } }, "pages/newurl/index": { "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "擎盾AI体验中心", "navigationBarBackgroundColor": "#ECF1F7", "backgroundColor": "#FFFFFF" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
@@ -11075,6 +11075,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   var getSubjectResult = function getSubjectResult() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post('http://ai-model.aegis-info.com/exam_score_test/rate', params);};
   // 获取司法摘要解析
   var getJudicialSummaryResult = function getJudicialSummaryResult() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post('http://58.213.45.42:6800/v2/api/summary/sfzy', params);};
+  // 获取舆情文本解析
+  var getPublicSentimentResult = function getPublicSentimentResult() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.get('http://domainc.aegis-info.com/domain_predict', params);};
 
   vm.$u.api = {
     getObjectiveQuestions: getObjectiveQuestions,
@@ -11083,7 +11085,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     getSubjectSubQuestion: getSubjectSubQuestion,
     getSubjectAnswer: getSubjectAnswer,
     getSubjectResult: getSubjectResult,
-    getJudicialSummaryResult: getJudicialSummaryResult };
+    getJudicialSummaryResult: getJudicialSummaryResult,
+    getPublicSentimentResult: getPublicSentimentResult };
 
 };var _default =
 

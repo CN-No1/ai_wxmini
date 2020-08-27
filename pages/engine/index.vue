@@ -76,7 +76,7 @@
 		.intro {
 			padding: 40upx 48upx 85upx 55upx;
 			margin-bottom: 40upx;
-			background-image: url(../../static/bg/bg2.png);
+			background-image: url(../../static/bg/bg.png);
 
 			.title {
 				font-size: 42upx;

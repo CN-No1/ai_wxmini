@@ -1,0 +1,104 @@
+.publicSentiment {
+  background: #f6f7fa;
+  padding: 66rpx 0;
+  min-height: 1460rpx;
+}
+.publicSentiment .sub {
+  padding: 0 30rpx;
+  margin-bottom: 64rpx;
+}
+.publicSentiment .sub .sub-title {
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 600;
+  color: #1a1e30;
+  line-height: 45rpx;
+  margin: 0 0 16rpx 16rpx;
+}
+.publicSentiment .sub .sub-content {
+  padding: 32rpx 35rpx 48rpx 35rpx;
+  background: #ffffff;
+  box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 600;
+  line-height: 56rpx;
+}
+.publicSentiment .sub .sub-content .title {
+  color: #2F7EF9;
+}
+.publicSentiment .sub .sub-content .change {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+}
+.publicSentiment .sub .sub-content .change .icon-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  width: 128rpx;
+}
+.publicSentiment .sub .sub-content .change .icon-btn image {
+  height: 24rpx;
+  width: 24rpx;
+  margin-right: 16rpx;
+}
+.publicSentiment .sub .sub-content .primary-btn {
+  width: 280rpx;
+  height: 72rpx;
+  background: #2f7ef9;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 45rpx;
+  padding: 14rpx 73rpx;
+  margin: 40rpx 0 0 170rpx;
+}
+.publicSentiment .sub .result {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 47rpx 43rpx 43rpx 35rpx;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  font-size: 36rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 700;
+  color: #2f7ef9;
+  line-height: 50rpx;
+}
+.publicSentiment .sub .result .process {
+  width: 256rpx;
+  margin-left: 34rpx;
+  padding-bottom: 12rpx;
+}
+.publicSentiment .sub .result .tag {
+  position: relative;
+  top: -15rpx;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.publicSentiment .sub .result .tag image {
+  width: 35rpx;
+  height: 29rpx;
+}
+.publicSentiment .sub .result .left {
+  left: calc(-256rpx * (1 - 0.7) - 35rpx / 2);
+}
+.publicSentiment .sub .result .right {
+  left: calc(-256rpx * (1 - 0.3) - 35rpx / 2);
+}
+

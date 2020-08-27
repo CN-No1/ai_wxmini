@@ -6,7 +6,9 @@
     "pages/markPaper/index",
     "pages/judicialSummary/index",
     "pages/engine/index",
-    "pages/exam/index"
+    "pages/exam/index",
+    "pages/publicSentiment/index",
+    "pages/newurl/index"
   ],
   "subPackages": [],
   "window": {
@@ -45,5 +47,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap62.json"
 }

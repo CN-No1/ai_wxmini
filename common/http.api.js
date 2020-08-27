@@ -16,7 +16,9 @@ const install = (Vue, vm) => {
 	const getSubjectResult = (params = {}) => vm.$u.post('http://ai-model.aegis-info.com/exam_score_test/rate', params);
 	// 获取司法摘要解析
 	const getJudicialSummaryResult = (params = {}) => vm.$u.post('http://58.213.45.42:6800/v2/api/summary/sfzy', params);
-	
+	// 获取舆情文本解析
+	const getPublicSentimentResult = (params = {}) => vm.$u.get('http://domainc.aegis-info.com/domain_predict', params);
+
 	vm.$u.api = {
 		getObjectiveQuestions,
 		getObjectiveResult,
@@ -24,7 +26,8 @@ const install = (Vue, vm) => {
 		getSubjectSubQuestion,
 		getSubjectAnswer,
 		getSubjectResult,
-		getJudicialSummaryResult
+		getJudicialSummaryResult,
+		getPublicSentimentResult
 	}
 }
 

@@ -158,28 +158,36 @@ var _default =
     return {
       appList: [{
         img: '../../static/icon/交互式智能合同审查.png',
-        name: '交互式智能合同审查' },
+        name: '交互式智能合同审查',
+        url: '' },
       {
         img: '../../static/icon/司法摘要.png',
-        name: '司法摘要' },
+        name: '司法摘要',
+        url: 'pages/judicialSummary/index' },
       {
         img: '../../static/icon/智慧法考.png',
-        name: '智慧法考' },
+        name: '智慧法考',
+        url: 'pages/exam/index' },
       {
         img: '../../static/icon/法考阅卷.png',
-        name: '法考阅卷' },
+        name: '法考阅卷',
+        url: 'pages/markPaper/index' },
       {
         img: '../../static/icon/智能规则引擎.png',
-        name: '智能规则引擎' },
+        name: '智能规则引擎',
+        url: '' },
       {
         img: '../../static/icon/刑事量刑智能预测.png',
-        name: '刑事量刑智能预测' },
+        name: '刑事量刑智能预测',
+        url: '' },
       {
         img: '../../static/icon/法条检索.png',
-        name: '法条检索' },
+        name: '法条检索',
+        url: '' },
       {
         img: '../../static/icon/案例检索.png',
-        name: '案例检索' }] };
+        name: '案例检索',
+        url: '' }] };
 
 
   },
@@ -187,9 +195,13 @@ var _default =
 
 
   methods: {
+    nav: function nav(urls) {
+      this.$u.route({
+        url: urls });
 
-    onLoad: function onLoad() {
-
+      // wx.navigateTo({
+      // 	url: urls
+      // })
     } } };exports.default = _default;
 
 /***/ }),
