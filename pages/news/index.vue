@@ -32,7 +32,7 @@
 		}
 
 		.news-list {
-			min-height: 982upx;
+			min-height: 1460upx;
 			background: rgba(246, 247, 250, 1);
 			height: 100%;
 			padding-left: 30upx;

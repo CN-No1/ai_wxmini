@@ -1,4 +1,5 @@
 .exam.data-v-642fde1d {
+  min-height: 1460rpx;
   background: #f6f7fa;
   padding-bottom: 66rpx;
 }

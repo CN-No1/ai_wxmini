@@ -3,7 +3,7 @@
   height: 300rpx;
 }
 .news .news-list {
-  min-height: 982rpx;
+  min-height: 1460rpx;
   background: #f6f7fa;
   height: 100%;
   padding-left: 30rpx;

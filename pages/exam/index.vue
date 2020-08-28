@@ -132,6 +132,7 @@
 
 <style lang="less" scoped>
 	.exam {
+		min-height: 1460upx;
 		background: rgba(246, 247, 250, 1);
 		padding-bottom: 66upx;
 

@@ -162,6 +162,7 @@
 
 <style lang='less' scoped>
 	.mark-paper {
+		min-height: 1460upx;
 		background: rgba(246, 247, 250, 1);
 		padding-bottom: 66upx;
 

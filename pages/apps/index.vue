@@ -86,7 +86,7 @@
 		}
 
 		.apps-list {
-			min-height: 982upx;
+			min-height: 1460upx;
 			height: 100%;
 			padding-bottom: 10px;
 			background: rgba(246, 247, 250, 1);
