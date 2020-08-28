@@ -142,7 +142,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -258,18 +258,16 @@ var _default =
       this.showResult = false;
     },
     getResult: function getResult() {var _this = this;
-      uni.request({
-        url: 'http://tagresolve.aegis-info.com/api/v1/graph/parse/',
-        method: 'POST',
-        data: {
+      this.$u.api.allInterface({
+        "url": "http://tagresolve.aegis-info.com/api/v1/graph/parse/",
+        "method": "post",
+        "params": {
+          is_form: true,
           graph_id: '5d9fdf26b6f586db6e347f5a',
-          case_number: this.caseNumber },
-
-        header: {
-          "Content-Type": "application/x-www-form-urlencoded" } }).
+          case_number: this.caseNumber } }).
 
       then(function (res) {
-        var data = res[1].data.data[0];
+        var data = res.data[0];
         _this.baseRes = data.document;
         Object.keys(data.fields).map(function (key) {
           data.fields[key].infoList = [];
@@ -288,7 +286,6 @@ var _default =
       });
 
     } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

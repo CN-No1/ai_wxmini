@@ -11074,11 +11074,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   // 获取主观题解析
   var getSubjectResult = function getSubjectResult() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post('http://ai-model.aegis-info.com/exam_score_test/rate', params);};
   // 获取司法摘要解析
-  var getJudicialSummaryResult = function getJudicialSummaryResult() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post('http://58.213.45.42:6800/v2/api/summary/sfzy', params);};
+  var getJudicialSummaryResult = function getJudicialSummaryResult() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post('https://aiwx.aegis-info.com/api/algorithm', params);};
   // 获取舆情文本解析
   var getPublicSentimentResult = function getPublicSentimentResult() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.get('http://domainc.aegis-info.com/domain_predict', params);};
   // 获取规则引擎解析
   var getEngineResult = function getEngineResult() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post('http://tagresolve.aegis-info.com/api/v1/graph/parse/', params);};
+
+  // 统一调用接口
+  var allInterface = function allInterface() {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.post('https://aiwx.aegis-info.com/api/algorithm', params);};
 
   vm.$u.api = {
     getObjectiveQuestions: getObjectiveQuestions,
@@ -11089,7 +11092,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     getSubjectResult: getSubjectResult,
     getJudicialSummaryResult: getJudicialSummaryResult,
     getPublicSentimentResult: getPublicSentimentResult,
-    getEngineResult: getEngineResult };
+    getEngineResult: getEngineResult,
+    allInterface: allInterface };
 
 };var _default =
 

@@ -220,8 +220,12 @@ var _default =
       this.result = '';
     },
     getResult: function getResult() {var _this = this;
-      this.$u.api.getJudicialSummaryResult({
-        text: this.docList[this.index].text }).
+      this.$u.api.allInterface({
+        "url": "http://58.213.45.42:6800/v2/api/summary/sfzy",
+        "method": "post",
+        "params": {
+          text: this.docList[this.index].text } }).
+
       then(function (res) {
         _this.result = res.data;
       });

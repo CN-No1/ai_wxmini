@@ -218,9 +218,13 @@ var _default =
       this.getResult();
     },
     getResult: function getResult() {var _this = this;
-      this.$u.api.getPublicSentimentResult({
-        condition: '垃圾文本',
-        content: this.text }).
+      this.$u.api.allInterface({
+        "url": "http://domainc.aegis-info.com/domain_predict",
+        "method": "get",
+        "params": {
+          condition: '垃圾文本',
+          content: this.text } }).
+
       then(function (res) {
         _this.isRubbish = res.domain === '垃圾文本';
         _this.rate = _this.isRubbish ? 70 : 30;

@@ -15,11 +15,14 @@ const install = (Vue, vm) => {
 	// 获取主观题解析
 	const getSubjectResult = (params = {}) => vm.$u.post('http://ai-model.aegis-info.com/exam_score_test/rate', params);
 	// 获取司法摘要解析
-	const getJudicialSummaryResult = (params = {}) => vm.$u.post('http://58.213.45.42:6800/v2/api/summary/sfzy', params);
+	const getJudicialSummaryResult = (params = {}) => vm.$u.post('https://aiwx.aegis-info.com/api/algorithm', params);
 	// 获取舆情文本解析
 	const getPublicSentimentResult = (params = {}) => vm.$u.get('http://domainc.aegis-info.com/domain_predict', params);
 	// 获取规则引擎解析
 	const getEngineResult = (params = {}) => vm.$u.post('http://tagresolve.aegis-info.com/api/v1/graph/parse/', params);
+
+	// 统一调用接口
+	const allInterface = (params = {}) => vm.$u.post('https://aiwx.aegis-info.com/api/algorithm', params);
 
 	vm.$u.api = {
 		getObjectiveQuestions,
@@ -30,7 +33,8 @@ const install = (Vue, vm) => {
 		getSubjectResult,
 		getJudicialSummaryResult,
 		getPublicSentimentResult,
-		getEngineResult
+		getEngineResult,
+		allInterface
 	}
 }
 

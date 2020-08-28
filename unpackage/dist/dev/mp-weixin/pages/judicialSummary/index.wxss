@@ -1,6 +1,7 @@
 .judicial-summary.data-v-99d824c6 {
   background: #f6f7fa;
   padding-bottom: 66rpx;
+  min-height: 1460rpx;
 }
 .judicial-summary .intro.data-v-99d824c6 {
   padding: 40rpx 48rpx 85rpx 55rpx;

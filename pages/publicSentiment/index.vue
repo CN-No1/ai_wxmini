@@ -80,9 +80,13 @@
 				this.getResult()
 			},
 			getResult() {
-				this.$u.api.getPublicSentimentResult({
-					condition: '垃圾文本',
-					content: this.text
+				this.$u.api.allInterface({
+					"url": "http://domainc.aegis-info.com/domain_predict",
+					"method": "get",
+					"params": {
+						condition: '垃圾文本',
+						content: this.text
+					}
 				}).then(res => {
 					this.isRubbish = res.domain === '垃圾文本';
 					this.rate = this.isRubbish ? 70 : 30;

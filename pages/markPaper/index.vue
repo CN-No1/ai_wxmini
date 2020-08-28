@@ -109,7 +109,11 @@
 				}).exec()
 			},
 			getQuestion() {
-				this.$u.api.getSubjectQuestion().then(res => {
+				this.$u.api.allInterface({
+					"url": "http://ai-model.aegis-info.com/exam/subjective/problems",
+					"method": "get",
+					"params": {}
+				}).then(res => {
 					this.problemText = res.data.description.slice(4);
 					this.problemId = res.data.problem_id;
 					setTimeout(this.toShowExpand, 500);
@@ -117,8 +121,12 @@
 				})
 			},
 			getSubQuestion() {
-				this.$u.api.getSubjectSubQuestion({
-					problem_id: this.problemId
+				this.$u.api.allInterface({
+					"url": "http://ai-model.aegis-info.com/exam/subjective/questions",
+					"method": "get",
+					"params": {
+						problem_id: this.problemId
+					}
 				}).then(res => {
 					this.questionText = res.data.question_txt;
 					this.questionId = res.data.question_id;
@@ -126,9 +134,13 @@
 				})
 			},
 			getAnswer() {
-				this.$u.api.getSubjectAnswer({
-					problem_id: this.problemId,
-					question_id: this.questionId
+				this.$u.api.allInterface({
+					"url": "http://ai-model.aegis-info.com/exam/subjective/answers",
+					"method": "get",
+					"params": {
+						problem_id: this.problemId,
+						question_id: this.questionId
+					}
 				}).then(res => {
 					this.answer.answers.push(res.data);
 					this.answerText = res.data.answer;
@@ -136,7 +148,11 @@
 				})
 			},
 			getResult() {
-				this.$u.api.getSubjectResult(this.answer).then(res => {
+				this.$u.api.allInterface({
+					"url": "http://ai-model.aegis-info.com/exam_score_test/rate",
+					"method": "post",
+					"params": this.answer
+				}).then(res => {
 					this.result = res.data[0].marks;
 				})
 			}

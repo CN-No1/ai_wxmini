@@ -114,18 +114,16 @@
 				this.showResult = false;
 			},
 			getResult() {
-				uni.request({
-					url: 'http://tagresolve.aegis-info.com/api/v1/graph/parse/',
-					method: 'POST',
-					data: {
+				this.$u.api.allInterface({
+					"url": "http://tagresolve.aegis-info.com/api/v1/graph/parse/",
+					"method": "post",
+					"params": {
+						is_form: true,
 						graph_id: '5d9fdf26b6f586db6e347f5a',
 						case_number: this.caseNumber
-					},
-					header: {
-						"Content-Type": "application/x-www-form-urlencoded"
 					}
 				}).then(res => {
-					const data = res[1].data.data[0];
+					const data = res.data[0];
 					this.baseRes = data.document;
 					Object.keys(data.fields).map(key => {
 						data.fields[key].infoList = [];

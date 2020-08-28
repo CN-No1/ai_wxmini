@@ -85,8 +85,12 @@
 				this.result = '';
 			},
 			getResult() {
-				this.$u.api.getJudicialSummaryResult({
-					text: this.docList[this.index].text
+				this.$u.api.allInterface({
+					"url": "http://58.213.45.42:6800/v2/api/summary/sfzy",
+					"method": "post",
+					"params": {
+						text: this.docList[this.index].text
+					}
 				}).then(res => {
 					this.result = res.data;
 				})
@@ -99,6 +103,7 @@
 	.judicial-summary {
 		background: rgba(246, 247, 250, 1);
 		padding-bottom: 66upx;
+		min-height: 1460upx;
 
 		.intro {
 			padding: 40upx 48upx 85upx 55upx;

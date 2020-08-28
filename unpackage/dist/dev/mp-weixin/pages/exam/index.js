@@ -84,7 +84,11 @@ var _default =
     },
     getQuestion: function getQuestion() {var _this = this;
       this.result = [];
-      this.$u.api.getObjectiveQuestions().then(function (res) {
+      this.$u.api.allInterface({
+        "url": "http://ai-model.aegis-info.com/exam/objective/questions",
+        "method": "get",
+        "params": {} }).
+      then(function (res) {
         var resObj = Object.assign({}, res.data);
         var option = resObj.option_list;
         _this.reqObj = {
@@ -108,7 +112,11 @@ var _default =
       uni.showLoading({
         title: "解析中..." });
 
-      this.$u.api.getObjectiveResult(this.reqObj).then(function (res) {
+      this.$u.api.allInterface({
+        "url": "http://ai-model.aegis-info.com/exam_answer/predict",
+        "method": "post",
+        "params": this.reqObj }).
+      then(function (res) {
         var answer = res.data.answer;
         var rates = res.data.prob;
         _this2.result = [].concat(_this2.optionList);

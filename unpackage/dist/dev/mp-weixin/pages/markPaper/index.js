@@ -253,7 +253,11 @@ var _default =
       }).exec();
     },
     getQuestion: function getQuestion() {var _this2 = this;
-      this.$u.api.getSubjectQuestion().then(function (res) {
+      this.$u.api.allInterface({
+        "url": "http://ai-model.aegis-info.com/exam/subjective/problems",
+        "method": "get",
+        "params": {} }).
+      then(function (res) {
         _this2.problemText = res.data.description.slice(4);
         _this2.problemId = res.data.problem_id;
         setTimeout(_this2.toShowExpand, 500);
@@ -261,8 +265,12 @@ var _default =
       });
     },
     getSubQuestion: function getSubQuestion() {var _this3 = this;
-      this.$u.api.getSubjectSubQuestion({
-        problem_id: this.problemId }).
+      this.$u.api.allInterface({
+        "url": "http://ai-model.aegis-info.com/exam/subjective/questions",
+        "method": "get",
+        "params": {
+          problem_id: this.problemId } }).
+
       then(function (res) {
         _this3.questionText = res.data.question_txt;
         _this3.questionId = res.data.question_id;
@@ -270,9 +278,13 @@ var _default =
       });
     },
     getAnswer: function getAnswer() {var _this4 = this;
-      this.$u.api.getSubjectAnswer({
-        problem_id: this.problemId,
-        question_id: this.questionId }).
+      this.$u.api.allInterface({
+        "url": "http://ai-model.aegis-info.com/exam/subjective/answers",
+        "method": "get",
+        "params": {
+          problem_id: this.problemId,
+          question_id: this.questionId } }).
+
       then(function (res) {
         _this4.answer.answers.push(res.data);
         _this4.answerText = res.data.answer;
@@ -280,7 +292,11 @@ var _default =
       });
     },
     getResult: function getResult() {var _this5 = this;
-      this.$u.api.getSubjectResult(this.answer).then(function (res) {
+      this.$u.api.allInterface({
+        "url": "http://ai-model.aegis-info.com/exam_score_test/rate",
+        "method": "post",
+        "params": this.answer }).
+      then(function (res) {
         _this5.result = res.data[0].marks;
       });
     } } };exports.default = _default;
