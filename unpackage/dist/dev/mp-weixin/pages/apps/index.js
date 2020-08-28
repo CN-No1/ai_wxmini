@@ -179,7 +179,7 @@ var _default =
       {
         img: '../../static/icon/Sentencing.png',
         name: '刑事量刑智能预测',
-        url: 'https://h5.law.push.aegis-info.com/html/index.html?id=5806' },
+        url: 'https://h5-common2.aegis-info.com/html/index.html?id=5806' },
       {
         img: '../../static/icon/lawSearch.png',
         name: '法条检索',
@@ -196,7 +196,7 @@ var _default =
 
   methods: {
     nav: function nav(urls) {
-      if (urls.indexOf('http') > 0) {
+      if (urls.indexOf('http') !== -1) {
         this.$u.route({
           url: 'pages/newurl/index',
           params: {
