@@ -112,7 +112,6 @@
 }
 .mark-paper .sub .result .row.data-v-04c50b57 {
   width: 690rpx;
-  height: 80rpx;
   padding: 20rpx 48rpx;
   font-size: 28rpx;
   font-family: PingFangSC-Regular, PingFang SC;
@@ -128,6 +127,19 @@
 }
 .mark-paper .sub .result .header .th.data-v-04c50b57 {
   color: #2F7EF9;
+}
+.mark-paper .sub .result .tr.data-v-04c50b57 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.mark-paper .sub .result .tr .tr-item.data-v-04c50b57:first-child {
+  width: 133rpx;
+}
+.mark-paper .sub .result .tr .tr-item.data-v-04c50b57:not(:first-child) {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
 }
 .mark-paper .sub .result .tr.data-v-04c50b57:nth-child(2n-1) {
   background: rgba(246, 247, 250, 0.79);

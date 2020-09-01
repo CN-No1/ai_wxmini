@@ -11,7 +11,7 @@ const app = new Vue({
 import HttpInterceptor from '@/common/http.interceptor.js';
 import HttpApi from '@/common/http.api.js';
 import Utils from '@/common/utils.js';
-// Vue.use(HttpInterceptor, app);
+Vue.use(HttpInterceptor, app);
 // http接口API集中管理引入部分
 Vue.use(HttpApi, app);
 

@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "法考阅卷",
-  "usingComponents": {}
+  "usingComponents": {
+    "u-field": "/uview-ui/components/u-field/u-field"
+  }
 }

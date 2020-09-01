@@ -11,45 +11,45 @@ const install = (Vue, vm) => {
 			'content-type': 'application/json;charset=UTF-8'
 		} // 配置头信息
 	});
-	// 请求拦截部分
-	Vue.prototype.$u.http.interceptor.request = async (config) => {
-		if (config.method === 'GET') {
-			config.header['content-type'] = 'application/json;charset=UTF-8'
-		}
-		// 获取token信息
-		const userInfo = await uni.getStorageSync('user-info');
-		if (userInfo && userInfo.token) {
-			config.header['Authorization'] = userInfo.token;
-		}
-		return config;
-	};
-	// 响应拦截
-	Vue.prototype.$u.http.interceptor.response = (res) => {
-		if (res.code === 200 || res.code === 0 || (res.data && typeof res.data === 'object' && res.data.length > 0)) {
-			return res;
-		} else if (res.code === 401) {
-			// 401 token校验失败，跳转到登录环节
-			vm.$u.toast('验证失败，请重新登录');
-			setTimeout(() => {
+	// // 请求拦截部分
+	// Vue.prototype.$u.http.interceptor.request = async (config) => {
+	// 	if (config.method === 'GET') {
+	// 		config.header['content-type'] = 'application/json;charset=UTF-8'
+	// 	}
+	// 	// 获取token信息
+	// 	const userInfo = await uni.getStorageSync('user-info');
+	// 	if (userInfo && userInfo.token) {
+	// 		config.header['Authorization'] = userInfo.token;
+	// 	}
+	// 	return config;
+	// };
+	// // 响应拦截
+	// Vue.prototype.$u.http.interceptor.response = (res) => {
+	// 	if (res.code === 200 || res.code === 0 || (res.data && typeof res.data === 'object' && res.data.length > 0)) {
+	// 		return res;
+	// 	} else if (res.code === 401) {
+	// 		// 401 token校验失败，跳转到登录环节
+	// 		vm.$u.toast('验证失败，请重新登录');
+	// 		setTimeout(() => {
 
-				vm.$u.route({
-					type: 'redirectTo',
-					url: 'pages/login/index'
-				})
-			}, 1500)
-			return false;
-		} else {
-			// 如果返回false，则会调用Promise的reject回调
-			uni.showModal({
-				title: '提示',
-				content: res.message || '网络繁忙，接口失败！',
-				showCancel: false,
-				confirmText: '知道了',
-				confirmColor: '#007AFF'
-			})
-			return false;
-		}
-	};
+	// 			vm.$u.route({
+	// 				type: 'redirectTo',
+	// 				url: 'pages/login/index'
+	// 			})
+	// 		}, 1500)
+	// 		return false;
+	// 	} else {
+	// 		// 如果返回false，则会调用Promise的reject回调
+	// 		uni.showModal({
+	// 			title: '提示',
+	// 			content: res.message || '网络繁忙，接口失败！',
+	// 			showCancel: false,
+	// 			confirmText: '知道了',
+	// 			confirmColor: '#007AFF'
+	// 		})
+	// 		return false;
+	// 	}
+	// };
 }
 
 export default {

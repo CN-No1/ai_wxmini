@@ -54,7 +54,9 @@
 				学生解答
 			</view>
 			<view class="sub-content">
-				{{answerText}}
+				<!-- {{answerText}} -->
+				<u-field v-model="answerText" placeholder="请输入文本" type="textarea" :clearable='false' label-width='0' maxlength='500'>
+				</u-field>
 				<view class="primary-btn" @click="getResult">
 					一键解析
 				</view>
@@ -71,8 +73,8 @@
 					<span class="th">得分解析</span>
 				</view>
 				<view class="row tr" v-for="(item,index) in result" :key="index">
-					<span>{{item.score}}分</span>
-					<span>{{item.text}}</span>
+					<view class="tr-item">{{item.score}}分</view>
+					<view class="tr-item">{{item.text}}</view>
 				</view>
 			</view>
 		</view>
@@ -280,7 +282,6 @@
 
 				.row {
 					width: 690upx;
-					height: 80upx;
 					padding: 20upx 48upx;
 					font-size: 28upx;
 					font-family: PingFangSC-Regular, PingFang SC;
@@ -302,6 +303,15 @@
 				}
 
 				.tr {
+					display: flex;
+
+					.tr-item:first-child {
+						width: 133rpx;
+					}
+					.tr-item:not(:first-child){
+						flex: 1;
+					}
+
 					&:nth-child(2n-1) {
 						background: rgba(246, 247, 250, 0.79);
 					}
