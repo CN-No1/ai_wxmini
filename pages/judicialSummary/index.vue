@@ -118,6 +118,9 @@
 				this.result = '';
 			},
 			getResult() {
+				uni.showLoading({
+					title: "解析中..."
+				})
 				this.$u.api.allInterface({
 					"url": "http://58.213.45.42:6800/v2/api/summary/sfzy",
 					"method": "post",
@@ -125,6 +128,9 @@
 						text: this.docList[this.index].text
 					}
 				}).then(res => {
+					setTimeout(() => {
+						uni.hideLoading()
+					}, 2000)
 					this.result = res.data;
 				})
 			}

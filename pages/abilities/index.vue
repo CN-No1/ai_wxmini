@@ -15,7 +15,7 @@
 					{{item.name}}
 				</view>
 				<view class="abilities-wrapper-inner">
-					<view class="abilities-item" v-for="(i, index) in item.abs" :key="index" @click="nav(i.url)">
+					<view class="abilities-item" v-for="(i, subindex) in item.abs" :key="subindex" @click="nav(i.url)">
 						<image :src="i.img" class="abilities-icon"></image>
 						<view class="abilities-name">
 							{{i.name}}

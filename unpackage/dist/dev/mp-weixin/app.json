@@ -8,7 +8,8 @@
     "pages/engine/index",
     "pages/exam/index",
     "pages/publicSentiment/index",
-    "pages/newurl/index"
+    "pages/newurl/index",
+    "pages/test"
   ],
   "subPackages": [],
   "window": {
@@ -46,6 +47,12 @@
         "text": "生态"
       }
     ]
+  },
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.4",
+      "provider": "wx069ba97219f66d99"
+    }
   },
   "usingComponents": {}
 }

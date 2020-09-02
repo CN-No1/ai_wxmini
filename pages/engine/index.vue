@@ -125,6 +125,7 @@
 				}).then(res => {
 					const data = res.data[0];
 					this.baseRes = data.document;
+					this.ruleRes = [];
 					Object.keys(data.fields).map(key => {
 						data.fields[key].infoList = [];
 						if (data.fields[key].value.length > 0) {

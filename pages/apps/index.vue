@@ -61,6 +61,13 @@
 		},
 		methods: {
 			nav(urls) {
+				if (urls === '') {
+					uni.showToast({
+						title: '更多应用，即将上线！',
+						icon: 'none',
+						duration: 1000
+					})
+				}
 				if (urls.indexOf('http') !== -1) {
 					this.$u.route({
 						url: 'pages/newurl/index',

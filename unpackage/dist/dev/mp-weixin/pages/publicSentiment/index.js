@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   "u-line-progress": () =>
-    __webpack_require__.e(/*! import() | uview-ui/components/u-line-progress/u-line-progress */ "uview-ui/components/u-line-progress/u-line-progress").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-line-progress/u-line-progress.vue */ 142))
+    __webpack_require__.e(/*! import() | uview-ui/components/u-line-progress/u-line-progress */ "uview-ui/components/u-line-progress/u-line-progress").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-line-progress/u-line-progress.vue */ 150))
 }
 var render = function() {
   var _vm = this

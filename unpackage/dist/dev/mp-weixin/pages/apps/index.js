@@ -133,7 +133,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -196,6 +196,13 @@ var _default =
 
   methods: {
     nav: function nav(urls) {
+      if (urls === '') {
+        uni.showToast({
+          title: '更多应用，即将上线！',
+          icon: 'none',
+          duration: 1000 });
+
+      }
       if (urls.indexOf('http') !== -1) {
         this.$u.route({
           url: 'pages/newurl/index',
@@ -209,6 +216,7 @@ var _default =
 
       }
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

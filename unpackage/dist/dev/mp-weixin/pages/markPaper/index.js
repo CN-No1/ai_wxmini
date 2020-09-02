@@ -95,10 +95,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
-var components = {
-  "u-field": () =>
-    __webpack_require__.e(/*! import() | uview-ui/components/u-field/u-field */ "uview-ui/components/u-field/u-field").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-field/u-field.vue */ 135))
-}
+var components
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -145,92 +142,97 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var voiceInput = function voiceInput() {return __webpack_require__.e(/*! import() | components/voice-input/voice-input */ "components/voice-input/voice-input").then(__webpack_require__.bind(null, /*! ../../components/voice-input/voice-input.vue */ 168));};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
+  components: {
+    voiceInput: voiceInput },
+
   data: function data() {
     return {
       isExpend: false,
@@ -297,6 +299,8 @@ var _default =
       });
     },
     getResult: function getResult() {var _this5 = this;
+      this.answerText = this.$refs.voiceInput.content;
+      this.answer.answers[0].answer = this.answerText;
       this.$u.api.allInterface({
         "url": "http://ai-model.aegis-info.com/exam_score_test/rate",
         "method": "post",

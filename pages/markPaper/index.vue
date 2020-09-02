@@ -55,8 +55,9 @@
 			</view>
 			<view class="sub-content">
 				<!-- {{answerText}} -->
-				<u-field v-model="answerText" placeholder="请输入文本" type="textarea" :clearable='false' label-width='0' maxlength='500'>
-				</u-field>
+				<!-- 	<u-field v-model="answerText" placeholder="请输入文本" type="textarea" :clearable='false' label-width='0' maxlength='500'>
+				</u-field> -->
+				<voice-input ref='voiceInput' :inputContent='answerText'></voice-input>
 				<view class="primary-btn" @click="getResult">
 					一键解析
 				</view>
@@ -70,7 +71,7 @@
 			<view class="result">
 				<view class="row header">
 					<span class="th">得分</span>
-					<span class="th">得分解析</span>
+					<span class="th">得分点</span>
 				</view>
 				<view class="row tr" v-for="(item,index) in result" :key="index">
 					<view class="tr-item">{{item.score}}分</view>
@@ -83,7 +84,11 @@
 </template>
 
 <script>
+	import voiceInput from '../../components/voice-input/voice-input.vue';
 	export default {
+		components: {
+			voiceInput
+		},
 		data() {
 			return {
 				isExpend: false,
@@ -150,6 +155,8 @@
 				})
 			},
 			getResult() {
+				this.answerText = this.$refs.voiceInput.content;
+				this.answer.answers[0].answer = this.answerText;
 				this.$u.api.allInterface({
 					"url": "http://ai-model.aegis-info.com/exam_score_test/rate",
 					"method": "post",
@@ -308,7 +315,8 @@
 					.tr-item:first-child {
 						width: 133rpx;
 					}
-					.tr-item:not(:first-child){
+
+					.tr-item:not(:first-child) {
 						flex: 1;
 					}
 

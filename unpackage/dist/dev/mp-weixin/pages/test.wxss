@@ -1,0 +1,22 @@
+
+.echo-btn {
+	text-align: center;
+	width: 380rpx;
+	height: 72rpx;
+	background: rgba(47, 126, 249, 1);
+	border-radius: 8rpx;
+	font-size: 32rpx;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 1);
+	line-height: 45rpx;
+	padding: 14rpx 73rpx;
+	margin: 40rpx 0 0 170rpx;
+}
+.green {
+	background: rgba(47, 126, 249, 1);
+}
+.orange {
+	background-color: rgba(44, 70, 241, 1);
+}
+

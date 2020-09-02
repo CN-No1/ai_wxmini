@@ -133,7 +133,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -253,6 +253,9 @@ var _default =
       this.result = '';
     },
     getResult: function getResult() {var _this = this;
+      uni.showLoading({
+        title: "解析中..." });
+
       this.$u.api.allInterface({
         "url": "http://58.213.45.42:6800/v2/api/summary/sfzy",
         "method": "post",
@@ -260,9 +263,13 @@ var _default =
           text: this.docList[this.index].text } }).
 
       then(function (res) {
+        setTimeout(function () {
+          uni.hideLoading();
+        }, 2000);
         _this.result = res.data;
       });
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

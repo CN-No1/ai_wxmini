@@ -269,6 +269,7 @@ var _default =
       then(function (res) {
         var data = res.data[0];
         _this.baseRes = data.document;
+        _this.ruleRes = [];
         Object.keys(data.fields).map(function (key) {
           data.fields[key].infoList = [];
           if (data.fields[key].value.length > 0) {
