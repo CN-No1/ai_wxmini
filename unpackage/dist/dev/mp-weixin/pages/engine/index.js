@@ -220,20 +220,28 @@ var _default =
         "title": "王振奎、刘运梅等非法持有毒品罪一审刑事判决书" },
 
       {
+        "caseNumber": "（2016）黔27刑初42号",
+        "title": "周龙彪走私、贩卖、运输、制造毒品罪一审刑事判决书" },
+
+      {
+        "caseNumber": "（2016）黔0302刑初665号",
+        "title": "郑建英走私、贩卖、运输、制造毒品罪一审刑事判决书" },
+
+      {
         "caseNumber": "（2016）湘0722刑初233号",
         "title": "方彪走私、贩卖、运输、制造毒品罪一审刑事判决书" },
 
       {
-        "caseNumber": "(2016)陕0424民初2078号",
-        "title": "高某某与许某离婚纠纷一审民事判决书" },
+        "caseNumber": "（2016）皖0405刑初41号",
+        "title": "朱延好、朱宗连等非国家工作人员受贿罪一审刑事判决书" },
 
       {
-        "caseNumber": "(2016)苏0724民初4782号",
-        "title": "高某与乔某1离婚纠纷一审民事判决书" },
+        "caseNumber": "（2016）云2325刑初97号",
+        "title": "杨春荣诈骗罪一审刑事判决书" },
 
       {
-        "caseNumber": "（2016）豫0581民初3608号",
-        "title": "郭某与李某甲离婚纠纷一审民事判决书" }],
+        "caseNumber": "（2016）豫0106刑初82号",
+        "title": "胡海林诈骗罪一审刑事判决书" }],
 
 
       index: 0,
@@ -250,9 +258,7 @@ var _default =
     } },
 
   methods: {
-    onLoad: function onLoad() {
-      this.getText();
-    },
+    onLoad: function onLoad() {},
     getText: function getText() {
       this.index = this.index > 4 ? 0 : this.index + 1;
       this.showResult = false;
@@ -274,10 +280,15 @@ var _default =
           data.fields[key].infoList = [];
           if (data.fields[key].value.length > 0) {
             data.fields[key].value.map(function (k) {
-              var obj = {};
-              obj.key = Object.keys(k)[0];
-              obj.value = k[Object.keys(k)[0]].toString();
-              data.fields[key].infoList.push(obj);
+              Object.keys(k).map(function (valueKey) {
+                var obj = {};
+                obj.key = valueKey;
+                obj.value = k[valueKey].toString();
+                if (obj.value) {
+                  data.fields[key].infoList.push(obj);
+                }
+              });
+
             });
           }
           _this.ruleRes.push(data.fields[key]);

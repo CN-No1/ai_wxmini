@@ -293,14 +293,14 @@ __webpack_require__.r(__webpack_exports__);
           question_id: this.questionId } }).
 
       then(function (res) {
+        _this4.answer.answers = [];
         _this4.answer.answers.push(res.data);
         _this4.answerText = res.data.answer;
         _this4.result = [];
       });
     },
     getResult: function getResult() {var _this5 = this;
-      this.answerText = this.$refs.voiceInput.content;
-      this.answer.answers[0].answer = this.answerText;
+      this.answer.answers[0].answer = this.$refs.voiceInput.content;
       this.$u.api.allInterface({
         "url": "http://ai-model.aegis-info.com/exam_score_test/rate",
         "method": "post",

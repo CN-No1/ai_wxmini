@@ -149,14 +149,14 @@
 						question_id: this.questionId
 					}
 				}).then(res => {
+					this.answer.answers = [];
 					this.answer.answers.push(res.data);
 					this.answerText = res.data.answer;
 					this.result = [];
 				})
 			},
 			getResult() {
-				this.answerText = this.$refs.voiceInput.content;
-				this.answer.answers[0].answer = this.answerText;
+				this.answer.answers[0].answer = this.$refs.voiceInput.content;
 				this.$u.api.allInterface({
 					"url": "http://ai-model.aegis-info.com/exam_score_test/rate",
 					"method": "post",
