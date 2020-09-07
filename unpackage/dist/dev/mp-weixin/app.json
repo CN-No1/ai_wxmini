@@ -54,5 +54,6 @@
       "provider": "wx069ba97219f66d99"
     }
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap86.json"
 }

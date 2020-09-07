@@ -18,9 +18,9 @@
 						<image src="../../static/icon/huanyihuan.png"></image>换一换
 					</view>
 				</view>
-				<view class="primary-btn" @click="getResult">
+				<!-- 				<view class="primary-btn" @click="getResult">
 					一键解析
-				</view>
+				</view> -->
 			</view>
 		</view>
 		<view class="sub" v-if="rate>0">
@@ -72,12 +72,12 @@
 			}
 		},
 		methods: {
-			onload() {
-				this.getText()
+			onLoad() {
+				this.getText();
 			},
 			getText() {
-				this.index = this.index > 8 ? 0 : this.index + 1
-				this.getResult()
+				this.index = this.index > 8 ? 0 : this.index + 1;
+				this.getResult();
 			},
 			getResult() {
 				this.$u.api.allInterface({

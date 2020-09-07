@@ -210,7 +210,7 @@ var _default =
     } },
 
   methods: {
-    onload: function onload() {
+    onLoad: function onLoad() {
       this.getText();
     },
     getText: function getText() {
