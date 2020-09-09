@@ -55,9 +55,9 @@
 			</view>
 			<view class="sub-content">
 				<!-- {{answerText}} -->
-				<!-- 	<u-field v-model="answerText" placeholder="请输入文本" type="textarea" :clearable='false' label-width='0' maxlength='500'>
-				</u-field> -->
-				<voice-input ref='voiceInput' :inputContent='answerText'></voice-input>
+				<u-field v-model="answerText" placeholder="请输入文本" type="textarea" :clearable='false' label-width='0' maxlength='500'>
+				</u-field>
+				<!-- <voice-input ref='voiceInput' :inputContent='answerText'></voice-input> -->
 				<view class="primary-btn" @click="getResult">
 					一键解析
 				</view>

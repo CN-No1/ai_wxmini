@@ -138,4 +138,12 @@
 .engine .sub .sub-content .sub-item .child.data-v-617233c0 {
   text-indent: 25rpx;
 }
+.desc-text.data-v-617233c0 {
+  padding: 32rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 600;
+  line-height: 90rpx;
+  white-space: pre-line;
+}
 

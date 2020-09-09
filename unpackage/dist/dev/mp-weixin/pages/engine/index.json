@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "智能规则引擎",
-  "usingComponents": {}
+  "usingComponents": {
+    "u-popup": "/uview-ui/components/u-popup/u-popup"
+  }
 }

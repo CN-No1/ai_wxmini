@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "司法摘要",
-  "usingComponents": {}
+  "usingComponents": {
+    "u-popup": "/uview-ui/components/u-popup/u-popup"
+  }
 }

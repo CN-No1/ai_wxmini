@@ -88,11 +88,12 @@
 		}
 
 		.none {
+			padding-top: 180upx;
 			text-align: center;
 
 			.none-img {
-				width: 480upx;
-				height: 360upx;
+				width: 360upx;
+				height: 270upx;
 			}
 
 			.none-text {

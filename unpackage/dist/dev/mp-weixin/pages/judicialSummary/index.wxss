@@ -22,6 +22,7 @@
   font-weight: 600;
   color: #8891b9;
   line-height: 48rpx;
+  white-space: pre-line;
 }
 .judicial-summary .word.data-v-99d824c6 {
   width: 690rpx;
@@ -146,5 +147,13 @@
 .judicial-summary .sub .sub-content .scene image.data-v-99d824c6 {
   width: 48rpx;
   height: 10rpx;
+}
+.desc-text.data-v-99d824c6 {
+  padding: 32rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 600;
+  line-height: 90rpx;
+  white-space: pre-line;
 }
 

@@ -36,11 +36,12 @@
   padding-top: 15rpx;
 }
 .news .none {
+  padding-top: 180rpx;
   text-align: center;
 }
 .news .none .none-img {
-  width: 480rpx;
-  height: 360rpx;
+  width: 360rpx;
+  height: 270rpx;
 }
 .news .none .none-text {
   font-size: 34rpx;
