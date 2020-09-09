@@ -11,8 +11,6 @@
   "libVersion": "2.9.2",
   "appid": "wx71f383cd1efacd2a",
   "projectname": "iLawpush_wx-mini",
-  "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
   "condition": {
     "search": {
       "current": -1,
@@ -32,7 +30,7 @@
         {
           "name": "test",
           "id": 0,
-          "pathName": "pages/markPaper/index"
+          "pathName": "pages/news/index"
         }
       ]
     }

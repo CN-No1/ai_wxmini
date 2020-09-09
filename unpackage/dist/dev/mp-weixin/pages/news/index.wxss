@@ -3,11 +3,8 @@
   height: 300rpx;
 }
 .news .news-list {
-  min-height: 1460rpx;
   background: #f6f7fa;
   height: 100%;
-  padding-left: 30rpx;
-  padding-top: 28rpx;
 }
 .news .news-list .news-item {
   width: 690rpx;
@@ -37,5 +34,19 @@
   color: #1a1e30;
   line-height: 42rpx;
   padding-top: 15rpx;
+}
+.news .none {
+  text-align: center;
+}
+.news .none .none-img {
+  width: 480rpx;
+  height: 360rpx;
+}
+.news .none .none-text {
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 700;
+  color: #9AB0D0;
+  line-height: 48rpx;
 }
 

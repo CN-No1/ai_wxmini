@@ -215,7 +215,8 @@ var _default =
   data: function data() {
     return {
       showResult: false,
-      textList: [{
+      textList: [
+      {
         "caseNumber": "（2016）黑04刑初11号",
         "title": "王振奎、刘运梅等非法持有毒品罪一审刑事判决书" },
 

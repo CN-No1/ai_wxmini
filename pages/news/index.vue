@@ -2,13 +2,19 @@
 	<view class="news">
 		<image src="../../static/banner/banner3.png" class="banner"></image>
 		<view class="news-list">
-			<view class="news-item" v-for="(item, index) in newsList" :key="index" @click="goDetail(item.url)">
+			<!-- 			<view class="news-item" v-for="(item, index) in newsList" :key="index" @click="goDetail(item.url)">
 				<view class="img">
 
 				</view>
 				<view class="title u-line-3">
 					{{item.title}}
 				</view>
+			</view> -->
+		</view>
+		<view class="none">
+			<image class="none-img" src="../../static/bg/planning.png"></image>
+			<view class="none-text">
+				即将上线
 			</view>
 		</view>
 	</view>
@@ -46,11 +52,11 @@
 		}
 
 		.news-list {
-			min-height: 1460upx;
+			// min-height: 1460upx;
 			background: rgba(246, 247, 250, 1);
 			height: 100%;
-			padding-left: 30upx;
-			padding-top: 28upx;
+			// padding-left: 30upx;
+			// padding-top: 28upx;
 
 			.news-item {
 				width: 690upx;
@@ -78,6 +84,23 @@
 					line-height: 42upx;
 					padding-top: 15upx;
 				}
+			}
+		}
+
+		.none {
+			text-align: center;
+
+			.none-img {
+				width: 480upx;
+				height: 360upx;
+			}
+
+			.none-text {
+				font-size: 34upx;
+				font-family: PingFangSC-Regular, PingFang SC;
+				font-weight: 700;
+				color: #9AB0D0;
+				line-height: 48upx;
 			}
 		}
 

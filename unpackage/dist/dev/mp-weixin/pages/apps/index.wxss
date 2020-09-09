@@ -3,7 +3,7 @@
   height: 300rpx;
 }
 .index-page .apps-list {
-  min-height: 1460rpx;
+  min-height: 1060rpx;
   height: 100%;
   padding-bottom: 10px;
   background: #f6f7fa;
