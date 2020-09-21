@@ -156,7 +156,8 @@
 				})
 			},
 			getResult() {
-				this.answer.answers[0].answer = this.$refs.voiceInput.content;
+				// this.answer.answers[0].answer = this.$refs.voiceInput.content;
+				this.answer.answers[0].answer = this.answerText
 				this.$u.api.allInterface({
 					"url": "http://ai-model.aegis-info.com/exam_score_test/rate",
 					"method": "post",

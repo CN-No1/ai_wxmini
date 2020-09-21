@@ -12,6 +12,7 @@
 			</view> -->
 		</view>
 		<view class="none">
+			<!-- <image src="../../static/bg/news.png" style="height: 100%;"></image> -->
 			<image class="none-img" src="../../static/bg/planning.png"></image>
 			<view class="none-text">
 				即将上线
