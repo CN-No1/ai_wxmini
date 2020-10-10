@@ -43,6 +43,31 @@
 			"navigationBarTitleText": "舆情垃圾文本识别"
 		}
 	}, {
+		"path": "pages/classification/index",
+		"style": {
+			"navigationBarTitleText": "风险类别评估专题分类"
+		}
+	}, {
+		"path": "pages/density/index",
+		"style": {
+			"navigationBarTitleText": "舆情法规文本密度计算"
+		}
+	}, {
+		"path": "pages/positiveAndNagetive/index",
+		"style": {
+			"navigationBarTitleText": "舆情正负面分类"
+		}
+	}, {
+		"path": "pages/similarity/index",
+		"style": {
+			"navigationBarTitleText": "相似问题改写"
+		}
+	}, {
+		"path": "pages/triple/index",
+		"style": {
+			"navigationBarTitleText": "三元组抽取"
+		}
+	}, {
 		"path": "pages/newurl/index",
 		"style": {}
 	}, {

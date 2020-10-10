@@ -10,8 +10,10 @@
   width: 690rpx;
   height: 244rpx;
   background: #ffffff;
-  box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
-  border-radius: 8rpx;
+  -webkit-box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+          box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   padding: 32rpx 38rpx 32rpx 24rpx;
   margin-bottom: 24rpx;
   display: -webkit-box;

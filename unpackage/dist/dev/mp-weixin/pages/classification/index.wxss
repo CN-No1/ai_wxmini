@@ -1,0 +1,99 @@
+.classification {
+  background-color: #F6F7FA;
+  min-height: 1460rpx;
+}
+/*样式的width和height一定要与定义的cWidth和cHeight相对应*/
+.qiun-charts {
+  width: 690rpx;
+  height: 430rpx;
+  background-color: #FFFFFF;
+  margin: auto;
+}
+.charts {
+  width: 690rpx;
+  height: 430rpx;
+  background-color: #FFFFFF;
+}
+.sub {
+  padding: 44rpx 30rpx;
+}
+.sub .sub-title {
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 600;
+  color: #1a1e30;
+  line-height: 45rpx;
+  margin: 0 0 16rpx 16rpx;
+}
+.sub .sub-content {
+  padding: 32rpx 35rpx 48rpx 35rpx;
+  background: #ffffff;
+  -webkit-box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+          box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 600;
+  line-height: 56rpx;
+}
+.sub .sub-content .title {
+  color: #2F7EF9;
+}
+.sub .sub-content .change {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+}
+.sub .sub-content .change .icon-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  width: 128rpx;
+}
+.sub .sub-content .change .icon-btn image {
+  height: 24rpx;
+  width: 24rpx;
+  margin-right: 16rpx;
+}
+.sub .sub-content .primary-btn {
+  width: 280rpx;
+  height: 72rpx;
+  background: #2f7ef9;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 45rpx;
+  padding: 14rpx 73rpx;
+  margin: 40rpx 0 0 170rpx;
+}
+.result {
+  text-align: center;
+}
+.result image {
+  width: 724rpx;
+  height: 466rpx;
+}
+.result .result-text {
+  font-size: 40rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 56rpx;
+  position: relative;
+  top: -270rpx;
+  z-index: 999;
+}
+

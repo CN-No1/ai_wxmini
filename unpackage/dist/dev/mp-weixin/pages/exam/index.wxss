@@ -38,8 +38,10 @@
 .exam .sub .sub-content.data-v-79b5cb1b {
   padding: 32rpx 35rpx 48rpx 35rpx;
   background: #ffffff;
-  box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
-  border-radius: 8rpx;
+  -webkit-box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+          box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   font-size: 28rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 600;
@@ -86,7 +88,8 @@
   width: 280rpx;
   height: 72rpx;
   background: #2f7ef9;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   font-size: 32rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
@@ -97,8 +100,10 @@
 }
 .exam .sub .result-wrapper.data-v-79b5cb1b {
   background: #ffffff;
-  box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
-  border-radius: 8rpx;
+  -webkit-box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+          box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   font-size: 28rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 600;
@@ -122,6 +127,7 @@
 }
 .exam .sub .result-wrapper .isCorrect.data-v-79b5cb1b {
   border-bottom: none;
+  background: -webkit-gradient(linear, left top, right top, from(#42d2ad), to(#30bc98));
   background: -webkit-linear-gradient(left, #42d2ad 0%, #30bc98 100%);
   background: linear-gradient(90deg, #42d2ad 0%, #30bc98 100%);
 }

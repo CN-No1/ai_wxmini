@@ -28,8 +28,10 @@
   width: 690rpx;
   height: 385rpx;
   background: #ffffff;
-  box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
-  border-radius: 8rpx;
+  -webkit-box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+          box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   padding: 40rpx 53rpx 52rpx 56rpx;
   position: relative;
   left: 30rpx;
@@ -95,7 +97,8 @@
   width: 280rpx;
   height: 72rpx;
   background: #2f7ef9;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   font-size: 32rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
@@ -119,8 +122,10 @@
 .judicial-summary .sub .sub-content.data-v-61b6d442 {
   padding: 32rpx 35rpx 48rpx 35rpx;
   background: #ffffff;
-  box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
-  border-radius: 8rpx;
+  -webkit-box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+          box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   font-size: 28rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 600;

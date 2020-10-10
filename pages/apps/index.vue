@@ -24,7 +24,7 @@
 				appList: [{
 					img: '../../static/icon/contract.png',
 					name: '交互式智能合同审查',
-					url: ''
+					url: 'https://icontractreview.aegis-info.com/'
 				}, {
 					img: '../../static/icon/judicialSummary.png',
 					name: '司法摘要',

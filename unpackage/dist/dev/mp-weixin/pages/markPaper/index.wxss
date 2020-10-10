@@ -38,8 +38,10 @@
 .mark-paper .sub .sub-content.data-v-03818d19 {
   padding: 32rpx 35rpx 48rpx 35rpx;
   background: #ffffff;
-  box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
-  border-radius: 8rpx;
+  -webkit-box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+          box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   font-size: 28rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 600;
@@ -96,7 +98,8 @@
   width: 280rpx;
   height: 72rpx;
   background: #2f7ef9;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   font-size: 32rpx;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
@@ -107,8 +110,10 @@
 }
 .mark-paper .sub .result.data-v-03818d19 {
   background: #ffffff;
-  box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
-  border-radius: 8rpx;
+  -webkit-box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+          box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
 }
 .mark-paper .sub .result .row.data-v-03818d19 {
   width: 690rpx;
@@ -123,7 +128,8 @@
 }
 .mark-paper .sub .result .header.data-v-03818d19 {
   background: rgba(47, 126, 249, 0.15);
-  border-radius: 8rpx 8rpx 0rpx 0rpx;
+  -webkit-border-radius: 8rpx 8rpx 0rpx 0rpx;
+          border-radius: 8rpx 8rpx 0rpx 0rpx;
 }
 .mark-paper .sub .result .header .th.data-v-03818d19 {
   color: #2F7EF9;

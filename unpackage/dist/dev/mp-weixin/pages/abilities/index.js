@@ -193,11 +193,11 @@ __webpack_require__.r(__webpack_exports__);
         {
           name: '舆情正负面分类',
           img: '../../static/icon/PosOrNeg.png',
-          url: '' },
+          url: 'pages/positiveAndNagetive/index' },
         {
           name: '舆情法规文本密度计算',
           img: '../../static/icon/lawRule.png',
-          url: '' }] },
+          url: 'pages/density/index' }] },
 
       {
         name: '语义计算类',
@@ -216,14 +216,14 @@ __webpack_require__.r(__webpack_exports__);
         {
           name: '风险类别评估专题分类',
           img: '../../static/icon/risk.png',
-          url: '' }] },
+          url: 'pages/classification/index' }] },
 
       {
         name: '信息识别类',
         abs: [{
           name: '三元组抽取',
           img: '../../static/icon/Triplet.png',
-          url: '' },
+          url: 'pages/triple/index' },
         {
           name: '实体识别',
           img: '../../static/icon/recognition.png',
@@ -254,7 +254,7 @@ __webpack_require__.r(__webpack_exports__);
         {
           name: '相似问题改写',
           img: '../../static/icon/q1.png',
-          url: '' },
+          url: 'pages/similarity/index' },
         {
           name: '问答答案生产',
           img: '../../static/icon/q2.png',

@@ -4,7 +4,8 @@
 	width: 380rpx;
 	height: 72rpx;
 	background: rgba(47, 126, 249, 1);
-	border-radius: 8rpx;
+	-webkit-border-radius: 8rpx;
+	        border-radius: 8rpx;
 	font-size: 32rpx;
 	font-family: PingFangSC-Regular, PingFang SC;
 	font-weight: 400;

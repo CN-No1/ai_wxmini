@@ -29,8 +29,10 @@
   width: 205rpx;
   height: 240rpx;
   background: #ffffff;
-  box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
-  border-radius: 8rpx;
+  -webkit-box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+          box-shadow: 0rpx 6rpx 11rpx 0rpx #e7eeff;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   padding: 48rpx 32rpx 32rpx 32rpx;
   margin-bottom: 24rpx;
   text-align: center;

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "舆情法规文本密度计算",
+  "usingComponents": {
+    "u-line-progress": "/uview-ui/components/u-line-progress/u-line-progress"
+  }
+}

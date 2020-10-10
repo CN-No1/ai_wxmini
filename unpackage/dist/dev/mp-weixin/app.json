@@ -8,6 +8,11 @@
     "pages/engine/index",
     "pages/exam/index",
     "pages/publicSentiment/index",
+    "pages/classification/index",
+    "pages/density/index",
+    "pages/positiveAndNagetive/index",
+    "pages/similarity/index",
+    "pages/triple/index",
     "pages/newurl/index",
     "pages/test"
   ],
@@ -54,6 +59,5 @@
       "provider": "wx069ba97219f66d99"
     }
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap75.json"
+  "usingComponents": {}
 }
